@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Environment
+.env
+
+# dbt
+dbt_project/target/
+dbt_project/logs/
+dbt_project/.user.yml
+dbt_packages/
+
+# SQLite database (generated — run make ingest to recreate)
+data/cpg.db
+
+# MLflow
+mlruns/
+ml/models/*.pkl
+
+# OS
+.DS_Store

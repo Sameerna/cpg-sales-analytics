@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_sales_daily
+    description: "Daily revenue and volume aggregated by category and region"
+    columns:
+      - name: sale_date
+        tests: [not_null]
+      - name: category
+        tests: [not_null]
+      - name: region
+        tests: [not_null]
+      - name: total_revenue
+        tests: [not_null]
+
+  - name: mart_revenue_by_region
+    description: "Monthly revenue aggregated by region — used for region trend charts"
+    columns:
+      - name: region
+        tests: [not_null]
+      - name: total_revenue
+        tests: [not_null]
+
+  - name: mart_revenue_by_category
+    description: "Monthly revenue aggregated by category — used for category trend charts"
+    columns:
+      - name: category
+        tests: [not_null]
+      - name: total_revenue
+        tests: [not_null]
+
+  - name: mart_forecast_inputs
+    description: "Monthly feature table for Ridge regression — one row per (year, month, category, region)"
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: month
+        tests: [not_null]
+      - name: category
+        tests: [not_null]
+      - name: region
+        tests: [not_null]
+      - name: monthly_revenue
+        tests: [not_null]

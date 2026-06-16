@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: main
+    description: "Cleaned tables produced by the Python ingestion pipeline"
+    tables:
+      - name: clean_transactions
+        description: "Validated, deduplicated, normalised transaction records"
+        columns:
+          - name: transaction_id
+            tests: [unique, not_null]
+          - name: timestamp
+            tests: [not_null]
+          - name: quantity
+            tests: [not_null]
+          - name: unit_price
+            tests: [not_null]
+
+      - name: clean_products
+        description: "Deduplicated product master with normalised casing"
+        columns:
+          - name: sku_id
+            tests: [unique, not_null]
+
+      - name: clean_stores
+        description: "Store reference with normalised region names"
+        columns:
+          - name: store_id
+            tests: [unique, not_null]
+
+      - name: clean_promotions
+        description: "Valid promotional windows — end_before_start rows removed"
+        columns:
+          - name: promo_id
+            tests: [unique, not_null]
+
+      - name: clean_weather_data
+        description: "Monthly regional weather data"
+
+      - name: clean_marketing_spend
+        description: "Monthly marketing spend by category and channel"
+
+models:
+  - name: stg_transactions
+    description: "Cleaned transactions with derived sale_date, year, month and revenue"
+    columns:
+      - name: transaction_id
+        tests: [unique, not_null]
+      - name: sale_date
+        tests: [not_null]
+      - name: revenue
+        tests: [not_null]
+      - name: channel
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['pos', 'online', 'unknown']
+
+  - name: stg_products
+    description: "Typed product master"
+    columns:
+      - name: sku_id
+        tests: [unique, not_null]
+
+  - name: stg_stores
+    description: "Typed store reference with numeric casts"
+    columns:
+      - name: store_id
+        tests: [unique, not_null]
+
+  - name: stg_promotions
+    description: "Typed promotion windows"
+    columns:
+      - name: promo_id
+        tests: [unique, not_null]

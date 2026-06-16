@@ -1,0 +1,61 @@
+store_id,region,store_type,store_tier,store_size_sqm,weekly_footfall_estimate,has_online_delivery,demographic_segment
+ST001,North,hypermarket,A,1701,8334,Y,urban
+ST002,South,pharmacy,A,1265,8424,Y,suburban
+ST003,East,convenience,A,2316,7358,Y,
+ST004,West,convenience,A,2065,8214,Y,suburban
+ST005,N,supermarket,A,1389,7316,Y,rural
+ST006,S,supermarket,A,2140,8833,Y,
+ST007,E,hypermarket,A,2382,6989,Y,urban
+ST008,W,supermarket,A,1676,8387,Y,rural
+ST009,N,convenience,A,1958,7888,Y,rural
+ST010,South,convenience,A,2293,8484,Y,suburban
+ST011,E,convenience,A,1864,7909,Y,suburban
+ST012,W,pharmacy,A,1748,8772,Y,rural
+ST013,north,pharmacy,B,546,4112,Y,rural
+ST014,south,pharmacy,B,624,4833,N,urban
+ST015,East,convenience,B,563,4845,N,
+ST016,west,hypermarket,B,411,4340,N,rural
+ST017,N,supermarket,B,845,4862,N,rural
+ST018,South Region,supermarket,B,705,5137,N,suburban
+ST019,East Region,supermarket,B,731,4329,Y,rural
+ST020,W,convenience,B,646,5011,N,urban
+ST021,North,convenience,B,1075,4813,N,suburban
+ST022,south,convenience,B,1173,4182,N,
+ST023,E,pharmacy,B,862,5168,Y,urban
+ST024,West Region,convenience,B,472,4281,Y,urban
+ST025,North,convenience,B,1085,4985,Y,suburban
+ST026,south,convenience,B,816,4801,Y,
+ST027,east,pharmacy,B,1089,4303,Y,rural
+ST028,West,convenience,B,594,4905,N,
+ST029,north,convenience,B,853,4072,Y,urban
+ST030,South Region,convenience,B,897,5133,Y,
+ST031,East Region,pharmacy,B,799,5043,N,
+ST032,west,convenience,B,703,4210,N,urban
+ST033,North,supermarket,B,888,4834,N,suburban
+ST034,South,convenience,B,1009,3901,N,suburban
+ST035,East Region,supermarket,B,483,4370,N,rural
+ST036,West Region,hypermarket,B,671,5086,Y,rural
+ST037,North,supermarket,B,1036,4442,N,urban
+ST038,S,convenience,B,470,4550,Y,suburban
+ST039,E,supermarket,B,706,4416,N,suburban
+ST040,West,convenience,C,389,1672,N,suburban
+ST041,North Region,hypermarket,C,208,1917,N,urban
+ST042,south,hypermarket,C,250,1579,N,suburban
+ST043,E,convenience,C,298,1874,N,urban
+ST044,West Region,supermarket,C,362,1590,N,suburban
+ST045,North,hypermarket,C,263,1762,N,suburban
+ST046,South,hypermarket,C,397,1898,N,suburban
+ST047,East Region,convenience,C,92,2029,N,suburban
+ST048,W,pharmacy,C,161,1927,N,urban
+ST049,North,pharmacy,C,315,1736,N,rural
+ST050,South Region,convenience,C,178,1694,N,
+ST051,East,hypermarket,C,340,1707,N,
+ST052,W,supermarket,C,171,1896,N,rural
+ST053,north,hypermarket,C,390,1550,N,urban
+ST054,South Region,hypermarket,C,303,1738,N,urban
+ST055,East Region,hypermarket,C,249,1810,N,rural
+ST056,West,hypermarket,C,289,1888,N,rural
+ST057,N,convenience,C,274,1747,N,suburban
+ST058,S,pharmacy,C,235,1862,N,rural
+ST059,E,pharmacy,C,189,1643,N,
+ST060,West Region,supermarket,C,397,1958,N,rural

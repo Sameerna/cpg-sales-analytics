@@ -1,0 +1,11 @@
+event_id,competitor,event_type,category,region,event_date,description
+CE001,RivalCo,market_entry,Beverages,East,2023-07-01,RivalCo launched 12 Beverages SKUs in East region supermarkets at -15% vs market average price
+CE002,RivalCo,market_entry,Snacks,East,2023-08-01,RivalCo expanded into Snacks category in East region with aggressive intro pricing
+CE003,RivalCo,price_cut,Beverages,East,2023-10-01,RivalCo cut Beverages prices additional 8% ahead of Q4 season in East
+CE004,RivalCo,market_entry,Beverages,South,2024-01-15,RivalCo expanded Beverages to South region
+CE005,RivalCo,market_entry,Snacks,North,2024-03-01,RivalCo launched Snacks nationally after East success
+CE006,RivalCo,online_launch,Beverages,All,2023-09-01,RivalCo launched D2C online store with same-day delivery in major cities
+CE007,ValueBrand,price_cut,Dairy,West,2022-06-01,ValueBrand reduced Dairy prices 10% in West region
+CE008,ValueBrand,promotion,Household,South,2023-03-15,ValueBrand ran 3-month BOGO promotion on Household products in South
+CE009,RivalCo,promotion,Beverages,East,2024-06-01,RivalCo summer Beverages promotion: 25% off on online channel
+CE010,HealthFirst,market_entry,Personal Care,North,2023-04-01,HealthFirst launched premium Personal Care range in North targeting urban segment

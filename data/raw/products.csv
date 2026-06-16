@@ -1,0 +1,406 @@
+sku_id,category,subcategory,brand,package_size,list_price,launch_date,is_new_launch
+SKU0001,beverages,Juice,BrandB,500ml,6.82,2022-07-18,N
+SKU0002,Beverages,Energy,BrandD,250g,1.8,2021-11-08,N
+SKU0003,household,Laundry,BrandB,250g,6.47,2020-07-17,N
+SKU0004,beverages,Juice,BrandB,500g,7.3,2016-03-12,N
+SKU0005,household,Laundry,BrandD,250g,12.68,2016-05-12,N
+SKU0006,household,Dishwash,,2L,24.72,2023-06-21,N
+SKU0007,household,Paper Products,BrandB,500g,12.26,2020-04-28,N
+SKU0008,Dairy,Cheese,BrandD,250ml,4.83,2022-01-11,N
+SKU0009,Dairy,Yogurt,BrandB,500ml,2.17,2021-01-21,N
+SKU0010,personal care,Deodorant,BrandC,100g,21.74,2015-09-21,N
+SKU0011,personal care,Body Wash,BrandA,500g,14.23,2019-09-17,N
+SKU0012,household,Paper Products,BrandD,500g,10.75,,N
+SKU0013,PERSONAL CARE,Haircare,BrandD,500ml,17.53,2023-12-21,N
+SKU0014,dairy,Butter,BrandB,500g,3.18,,N
+SKU0015,Personal Care,Deodorant,,100g,27.83,2020-12-27,N
+SKU0016,Beverages,Carbonated,BrandC,2L,2.05,2020-03-06,N
+SKU0017,dairy,Cheese,BrandD,1L,2.06,2023-07-15,N
+SKU0018,beverages,Juice,BrandA,500g,4.56,2015-08-02,N
+SKU0019,Beverages,Dairy Drinks,BrandB,500ml,6.4,2017-03-27,N
+SKU0020,snacks,Bars,BrandC,500ml,2.79,2017-06-11,N
+SKU0021,Household,Paper Products,BrandA,100g,15.97,2016-04-14,N
+SKU0022,beverages,Juice,BrandA,100g,7.54,2019-03-18,N
+SKU0023,SNACKS,Crisps,,500g,1.23,2022-09-03,N
+SKU0024,Beverages,Dairy Drinks,BrandC,250ml,3.76,2019-02-26,N
+SKU0025,PERSONAL CARE,Deodorant,BrandB,2L,25.2,2019-01-23,N
+SKU0026,SNACKS,Confectionery,BrandD,2L,3.88,2018-01-11,N
+SKU0027,Personal Care,Skincare,BrandC,2L,25.29,2018-08-13,N
+SKU0028,snacks,Bars,BrandA,2L,3.95,2022-06-29,N
+SKU0029,dairy,Cheese,BrandC,100g,1.91,2023-12-12,N
+SKU0030,Dairy,Yogurt,BrandD,2L,3.78,2017-02-21,N
+SKU0031,HOUSEHOLD,Air Care,BrandD,500g,19.44,2022-03-30,N
+SKU0032,Beverages,Water,,1L,2.1,2022-10-04,N
+SKU0033,PERSONAL CARE,Oral Care,BrandC,250g,17.94,2023-05-14,N
+SKU0034,PERSONAL CARE,Haircare,BrandC,250ml,10.31,2016-05-09,N
+SKU0035,Household,Air Care,BrandC,250g,23.87,2017-02-23,N
+SKU0036,Household,Laundry,BrandC,500ml,24.46,2018-03-05,N
+SKU0037,DAIRY,Yogurt,BrandC,250ml,1.9,,N
+SKU0038,BEVERAGES,Energy,BrandA,500g,5.1,2016-06-01,N
+SKU0039,beverages,Juice,BrandA,1L,5.23,2019-12-10,N
+SKU0040,personal care,Skincare,,250g,6.08,,N
+SKU0041,Beverages,Juice,BrandA,100g,2.49,2018-05-29,N
+SKU0042,PERSONAL CARE,Deodorant,BrandD,2L,19.37,2017-07-13,N
+SKU0043,DAIRY,Cream,BrandA,100g,5.3,2018-06-04,N
+SKU0044,beverages,Carbonated,BrandB,500ml,7.66,2017-05-14,N
+SKU0045,snacks,Confectionery,BrandD,1L,3.12,2019-08-01,N
+SKU0046,beverages,Carbonated,BrandB,1L,3.0,2022-11-19,N
+SKU0047,Household,Dishwash,BrandB,250g,17.21,2019-10-08,N
+SKU0048,Snacks,Nuts,BrandC,100g,4.62,2015-10-20,N
+SKU0049,HOUSEHOLD,Paper Products,BrandD,1L,23.19,2020-04-03,N
+SKU0050,Household,Air Care,BrandC,100g,14.42,2021-09-15,N
+SKU0051,DAIRY,Cream,BrandA,500g,1.13,2022-07-24,N
+SKU0052,dairy,Cream,BrandD,1L,3.88,2016-12-18,N
+SKU0053,Snacks,Biscuits,BrandC,2L,4.99,2020-07-07,N
+SKU0054,dairy,Butter,BrandD,1L,2.61,2016-10-20,N
+SKU0055,Personal Care,Oral Care,BrandC,1L,24.97,2020-02-06,N
+SKU0056,Beverages,Dairy Drinks,BrandD,2L,7.81,2020-10-08,N
+SKU0057,beverages,Energy,BrandA,500ml,2.72,2023-06-26,N
+SKU0058,DAIRY,Butter,BrandA,250ml,3.75,2019-11-30,N
+SKU0059,HOUSEHOLD,Cleaning,,2L,20.38,2018-06-26,N
+SKU0060,beverages,Carbonated,BrandB,2L,2.96,2016-04-09,N
+SKU0061,dairy,Yogurt,BrandD,100g,3.54,2020-05-30,N
+SKU0062,SNACKS,Nuts,BrandA,1L,2.41,2020-09-12,N
+SKU0063,Personal Care,Oral Care,BrandC,500g,12.18,2017-12-30,N
+SKU0064,household,Dishwash,BrandD,1L,15.34,2016-08-31,N
+SKU0065,dairy,Yogurt,BrandB,100g,3.76,2020-02-09,N
+SKU0066,personal care,Deodorant,BrandD,2L,9.31,2015-06-28,N
+SKU0067,SNACKS,Confectionery,BrandC,500g,2.88,,N
+SKU0068,beverages,Carbonated,BrandB,2L,7.18,2020-11-24,N
+SKU0069,snacks,Confectionery,BrandD,250g,1.11,2017-12-21,N
+SKU0070,beverages,Water,BrandD,500g,7.04,2020-12-25,N
+SKU0071,HOUSEHOLD,Paper Products,BrandB,250g,2.83,,N
+SKU0072,BEVERAGES,Carbonated,BrandD,500ml,4.32,,N
+SKU0073,Dairy,Cheese,BrandC,1L,5.52,,N
+SKU0074,PERSONAL CARE,Haircare,BrandB,500ml,6.93,2021-05-07,N
+SKU0075,Beverages,Energy,,500ml,5.46,2022-08-30,N
+SKU0076,SNACKS,Crisps,BrandD,1L,2.74,2017-11-11,N
+SKU0077,HOUSEHOLD,Paper Products,BrandD,250g,5.63,2018-11-16,N
+SKU0078,dairy,Milk,BrandB,2L,3.28,2019-04-25,N
+SKU0079,household,Cleaning,BrandD,1L,10.26,2022-11-04,N
+SKU0080,Beverages,Dairy Drinks,BrandD,500g,5.18,2023-05-09,N
+SKU0081,dairy,Yogurt,BrandB,100g,4.88,2023-12-29,N
+SKU0082,DAIRY,Yogurt,BrandA,250g,4.39,2022-05-24,N
+SKU0083,beverages,Juice,BrandA,1L,3.51,2021-07-01,N
+SKU0084,DAIRY,Cheese,,100g,4.74,2016-06-25,N
+SKU0085,dairy,Cheese,BrandA,2L,5.15,2020-05-27,N
+SKU0086,BEVERAGES,Energy,,1L,2.41,2022-08-02,N
+SKU0087,BEVERAGES,Carbonated,BrandD,1L,6.64,,N
+SKU0088,Dairy,Yogurt,BrandD,250ml,3.92,2019-03-02,N
+SKU0089,Household,Cleaning,BrandD,250g,22.34,2021-11-03,N
+SKU0090,Dairy,Cheese,BrandD,250ml,4.25,2015-07-05,N
+SKU0091,beverages,Water,,2L,3.03,2019-05-11,N
+SKU0092,HOUSEHOLD,Cleaning,BrandD,100g,19.07,2019-08-27,N
+SKU0093,personal care,Haircare,BrandD,2L,28.35,2022-09-28,N
+SKU0094,SNACKS,Bars,,250g,4.39,,N
+SKU0095,dairy,Milk,BrandB,250g,1.3,2016-05-15,N
+SKU0096,household,Laundry,BrandB,500g,24.34,,N
+SKU0097,Household,Dishwash,BrandB,500g,6.72,2021-03-20,N
+SKU0098,Snacks,Bars,BrandB,500ml,2.18,2021-09-07,N
+SKU0099,Household,Laundry,BrandA,1L,7.77,2022-05-31,N
+SKU0100,snacks,Crisps,BrandB,250g,3.27,,N
+SKU0101,personal care,Oral Care,,100g,17.2,2020-05-04,N
+SKU0102,Beverages,Dairy Drinks,BrandC,2L,4.44,2021-11-24,N
+SKU0103,beverages,Carbonated,BrandD,250g,1.9,2019-07-04,N
+SKU0104,PERSONAL CARE,Haircare,BrandA,500ml,4.98,,N
+SKU0105,dairy,Butter,,100g,4.12,2022-12-26,N
+SKU0106,DAIRY,Milk,,250g,3.27,2016-02-11,N
+SKU0107,snacks,Biscuits,BrandD,2L,2.61,2019-08-22,N
+SKU0108,beverages,Juice,BrandD,250ml,3.53,2017-11-10,N
+SKU0109,Beverages,Water,BrandB,100g,6.91,,N
+SKU0110,BEVERAGES,Carbonated,BrandD,1L,5.31,2018-09-12,N
+SKU0111,PERSONAL CARE,Oral Care,BrandC,250ml,26.44,2018-03-24,N
+SKU0112,Household,Cleaning,BrandC,500g,13.67,2020-05-29,N
+SKU0113,Household,Air Care,,500g,10.45,2021-06-09,N
+SKU0114,HOUSEHOLD,Paper Products,BrandA,500ml,16.11,2015-04-18,N
+SKU0115,dairy,Milk,BrandB,500g,4.51,2018-10-23,N
+SKU0116,SNACKS,Crisps,BrandA,250g,3.18,2016-08-04,N
+SKU0117,Household,Paper Products,BrandC,250g,6.95,2018-10-28,N
+SKU0118,Dairy,Yogurt,BrandB,500g,4.88,2015-12-14,N
+SKU0119,household,Air Care,BrandD,100g,3.14,,N
+SKU0120,Personal Care,Oral Care,BrandD,250ml,14.18,2020-09-29,N
+SKU0121,DAIRY,Cheese,BrandA,500ml,4.39,2020-11-28,N
+SKU0122,Personal Care,Oral Care,BrandB,500g,29.58,,N
+SKU0123,Snacks,Biscuits,BrandD,500ml,4.01,2016-05-06,N
+SKU0124,SNACKS,Bars,BrandA,2L,2.4,2020-08-11,N
+SKU0125,beverages,Dairy Drinks,BrandD,100g,4.34,2015-11-15,N
+SKU0126,personal care,Skincare,BrandC,500ml,22.16,2016-04-16,N
+SKU0127,Household,Air Care,BrandA,500ml,12.58,2019-01-22,N
+SKU0128,personal care,Oral Care,BrandB,1L,18.9,2019-06-10,N
+SKU0129,SNACKS,Nuts,BrandC,1L,1.12,2020-12-13,N
+SKU0130,Snacks,Confectionery,BrandB,500g,1.79,2017-03-19,N
+SKU0131,beverages,Dairy Drinks,,2L,2.65,2020-07-16,N
+SKU0132,HOUSEHOLD,Paper Products,BrandB,2L,16.79,2018-08-16,N
+SKU0133,beverages,Dairy Drinks,BrandA,1L,4.55,2023-12-06,N
+SKU0134,Household,Paper Products,BrandC,250ml,3.71,2015-06-04,N
+SKU0135,BEVERAGES,Dairy Drinks,BrandA,2L,5.5,2020-03-10,N
+SKU0136,HOUSEHOLD,Laundry,BrandA,2L,16.99,2020-05-02,N
+SKU0137,Beverages,Dairy Drinks,BrandB,250ml,6.77,2023-01-04,N
+SKU0138,SNACKS,Confectionery,BrandB,1L,3.77,2020-11-16,N
+SKU0139,dairy,Cream,BrandA,500g,5.59,2023-09-08,N
+SKU0140,DAIRY,Butter,BrandC,1L,1.33,,N
+SKU0141,HOUSEHOLD,Laundry,BrandC,1L,22.09,2021-07-14,N
+SKU0142,personal care,Body Wash,BrandD,250g,6.48,2015-12-14,N
+SKU0143,DAIRY,Cream,BrandA,250g,5.07,2023-04-15,N
+SKU0144,personal care,Haircare,BrandB,1L,16.73,,N
+SKU0145,Personal Care,Oral Care,BrandA,100g,8.18,2016-09-26,N
+SKU0146,HOUSEHOLD,Paper Products,,500ml,21.21,2015-06-04,N
+SKU0147,HOUSEHOLD,Laundry,BrandD,250ml,10.66,2022-10-08,N
+SKU0148,PERSONAL CARE,Oral Care,BrandD,500ml,12.84,2019-12-25,N
+SKU0149,household,Laundry,BrandC,250g,7.5,2023-10-18,N
+SKU0150,household,Dishwash,,2L,24.64,2018-02-28,N
+SKU0151,snacks,Crisps,BrandD,500g,4.23,2016-07-20,N
+SKU0152,Dairy,Cheese,BrandA,500g,3.77,2020-10-14,N
+SKU0153,snacks,Crisps,BrandB,500g,1.95,2016-08-26,N
+SKU0154,Personal Care,Deodorant,,1L,26.89,2019-08-27,N
+SKU0155,Snacks,Crisps,BrandC,250ml,2.42,,N
+SKU0156,dairy,Yogurt,BrandD,2L,4.96,2018-03-21,N
+SKU0157,household,Laundry,BrandB,100g,2.12,,N
+SKU0158,Household,Paper Products,BrandA,250ml,14.14,2018-03-26,N
+SKU0159,Snacks,Crisps,BrandD,100g,2.56,2020-02-16,N
+SKU0160,HOUSEHOLD,Laundry,BrandC,2L,2.38,2017-09-17,N
+SKU0161,Beverages,Carbonated,,1L,5.5,2019-09-03,N
+SKU0162,BEVERAGES,Dairy Drinks,BrandA,2L,7.7,2023-10-27,N
+SKU0163,personal care,Skincare,BrandC,500g,4.18,2019-03-10,N
+SKU0164,Beverages,Dairy Drinks,BrandC,500ml,3.74,2022-01-17,N
+SKU0165,Beverages,Energy,BrandD,250g,3.79,2022-03-17,N
+SKU0166,snacks,Crisps,BrandC,500ml,4.21,,N
+SKU0167,beverages,Dairy Drinks,BrandD,500g,6.64,2018-07-16,N
+SKU0168,HOUSEHOLD,Laundry,BrandC,1L,12.89,,N
+SKU0169,beverages,Energy,BrandD,250g,7.13,2016-05-24,N
+SKU0170,personal care,Deodorant,BrandC,500g,27.16,2017-02-04,N
+SKU0171,household,Cleaning,BrandD,100g,8.13,,N
+SKU0172,snacks,Bars,BrandC,2L,3.09,2015-11-24,N
+SKU0173,household,Air Care,BrandA,250g,18.51,2019-12-24,N
+SKU0174,Dairy,Milk,BrandD,1L,4.07,2022-03-04,N
+SKU0175,Household,Dishwash,BrandD,250ml,20.43,2015-05-08,N
+SKU0176,snacks,Biscuits,,250ml,1.08,2019-02-09,N
+SKU0177,household,Air Care,BrandA,100g,5.53,2019-02-28,N
+SKU0178,snacks,Nuts,BrandA,250ml,3.02,2022-04-14,N
+SKU0179,Snacks,Bars,BrandC,250g,2.9,2021-04-19,N
+SKU0180,personal care,Haircare,BrandA,500ml,8.79,2022-10-13,N
+SKU0181,Beverages,Water,BrandC,250g,4.44,2019-12-29,N
+SKU0182,Beverages,Juice,BrandC,100g,5.07,2018-05-13,N
+SKU0183,Snacks,Biscuits,BrandA,1L,1.31,2016-07-22,N
+SKU0184,Household,Dishwash,BrandA,250ml,15.16,2021-03-09,N
+SKU0185,DAIRY,Butter,BrandD,500g,2.99,2020-05-14,N
+SKU0186,Household,Air Care,BrandD,250g,3.7,2022-03-16,N
+SKU0187,HOUSEHOLD,Dishwash,BrandB,500g,9.92,2023-10-01,N
+SKU0188,Snacks,Confectionery,BrandB,1L,2.62,2015-08-15,N
+SKU0189,snacks,Confectionery,BrandC,500g,1.48,2017-07-12,N
+SKU0190,beverages,Juice,BrandC,100g,3.13,2021-03-06,N
+SKU0191,HOUSEHOLD,Laundry,BrandB,250g,4.15,2021-08-21,N
+SKU0192,Household,Cleaning,BrandA,250ml,18.57,2021-04-27,N
+SKU0193,household,Dishwash,BrandA,2L,8.09,2021-06-01,N
+SKU0194,Household,Air Care,BrandC,2L,8.66,2020-06-01,N
+SKU0195,beverages,Energy,BrandB,1L,5.98,2019-08-30,N
+SKU0196,HOUSEHOLD,Paper Products,BrandD,500ml,5.3,2018-07-31,N
+SKU0197,dairy,Milk,BrandC,2L,3.57,2017-09-17,N
+SKU0198,snacks,Confectionery,BrandD,500ml,1.39,,N
+SKU0199,snacks,Nuts,BrandB,2L,4.22,2023-02-01,N
+SKU0200,Household,Cleaning,BrandD,100g,12.74,2020-07-30,N
+SKU0201,Personal Care,Skincare,BrandC,2L,29.1,2018-12-16,N
+SKU0202,household,Dishwash,BrandA,500g,22.29,2020-04-11,N
+SKU0203,beverages,Energy,BrandC,250ml,4.3,2023-02-27,N
+SKU0204,PERSONAL CARE,Oral Care,BrandA,2L,4.38,2019-01-24,N
+SKU0205,HOUSEHOLD,Dishwash,BrandA,500ml,12.36,2021-12-27,N
+SKU0206,BEVERAGES,Water,BrandB,500ml,4.06,2018-10-20,N
+SKU0207,Household,Laundry,BrandC,500g,13.71,2015-07-05,N
+SKU0208,Personal Care,Oral Care,,1L,17.02,2020-10-12,N
+SKU0209,SNACKS,Bars,,500g,2.45,2018-05-10,N
+SKU0210,household,Cleaning,BrandC,1L,14.24,2018-05-12,N
+SKU0211,BEVERAGES,Carbonated,,2L,7.87,2023-12-08,N
+SKU0212,DAIRY,Cream,BrandB,250g,5.84,2023-09-15,N
+SKU0213,BEVERAGES,Dairy Drinks,BrandD,500ml,5.29,2022-01-20,N
+SKU0214,Snacks,Crisps,BrandD,1L,0.93,2016-03-26,N
+SKU0215,PERSONAL CARE,Body Wash,BrandD,500g,7.09,2019-08-08,N
+SKU0216,beverages,Energy,,2L,6.09,2021-04-16,N
+SKU0217,dairy,Cream,BrandC,250g,5.78,2020-12-23,N
+SKU0218,dairy,Cream,BrandC,500ml,4.05,2017-10-06,N
+SKU0219,DAIRY,Butter,BrandC,2L,4.86,2022-09-28,N
+SKU0220,dairy,Cheese,BrandA,100g,3.8,2023-02-03,N
+SKU0221,Household,Paper Products,BrandA,1L,10.73,2018-11-14,N
+SKU0222,BEVERAGES,Energy,BrandB,500ml,3.75,2017-11-16,N
+SKU0223,Household,Cleaning,,250g,8.24,2018-01-17,N
+SKU0224,HOUSEHOLD,Laundry,BrandB,250ml,7.5,,N
+SKU0225,BEVERAGES,Juice,BrandA,100g,4.19,2016-02-16,N
+SKU0226,snacks,Nuts,BrandC,1L,2.51,2020-05-02,N
+SKU0227,DAIRY,Cream,BrandB,100g,4.23,2016-01-02,N
+SKU0228,Beverages,Energy,BrandD,500ml,7.44,2016-12-21,N
+SKU0229,DAIRY,Cream,BrandA,1L,5.38,,N
+SKU0230,dairy,Yogurt,,2L,3.27,2020-11-17,N
+SKU0231,DAIRY,Butter,BrandC,250g,1.96,2016-10-27,N
+SKU0232,SNACKS,Nuts,BrandB,100g,0.86,2018-04-23,N
+SKU0233,personal care,Skincare,BrandB,500ml,25.33,2015-12-22,N
+SKU0234,personal care,Haircare,BrandD,500g,11.74,2017-12-04,N
+SKU0235,DAIRY,Milk,BrandC,250g,5.77,2023-02-08,N
+SKU0236,Dairy,Butter,BrandC,500ml,4.46,,N
+SKU0237,personal care,Skincare,BrandC,1L,21.52,2022-11-21,N
+SKU0238,Household,Air Care,,1L,7.08,2020-05-12,N
+SKU0239,PERSONAL CARE,Haircare,BrandB,250g,21.95,2023-06-30,N
+SKU0240,household,Dishwash,BrandC,250ml,22.08,,N
+SKU0241,Household,Dishwash,,500ml,4.58,2020-09-01,N
+SKU0242,SNACKS,Nuts,,2L,2.18,2016-04-21,N
+SKU0243,beverages,Juice,,2L,7.34,2015-08-16,N
+SKU0244,personal care,Skincare,BrandD,1L,18.23,2022-07-18,N
+SKU0245,beverages,Water,BrandA,100g,6.35,2015-07-05,N
+SKU0246,beverages,Carbonated,BrandC,2L,7.57,,N
+SKU0247,SNACKS,Biscuits,BrandC,2L,4.03,2023-03-07,N
+SKU0248,Personal Care,Body Wash,BrandB,250g,26.48,2019-03-19,N
+SKU0249,DAIRY,Yogurt,BrandB,500g,1.59,2019-05-29,N
+SKU0250,BEVERAGES,Dairy Drinks,BrandD,100g,6.42,2020-03-11,N
+SKU0251,Personal Care,Oral Care,BrandB,250g,25.23,2018-11-18,N
+SKU0252,Beverages,Juice,BrandB,250ml,1.71,2021-11-23,N
+SKU0253,BEVERAGES,Carbonated,BrandB,250g,5.36,2022-07-15,N
+SKU0254,Beverages,Juice,,1L,4.11,2017-06-08,N
+SKU0255,SNACKS,Confectionery,BrandC,500ml,4.23,2018-07-30,N
+SKU0256,Dairy,Butter,BrandC,1L,5.38,2020-11-05,N
+SKU0257,Beverages,Energy,,2L,5.12,2023-03-31,N
+SKU0258,beverages,Dairy Drinks,BrandC,250g,7.82,2022-07-12,N
+SKU0259,PERSONAL CARE,Deodorant,BrandB,500g,14.02,2017-01-23,N
+SKU0260,Snacks,Confectionery,BrandD,2L,2.06,2020-03-11,N
+SKU0261,Household,Paper Products,BrandA,2L,14.19,2017-11-10,N
+SKU0262,Dairy,Cheese,BrandD,250g,1.46,2017-02-19,N
+SKU0263,HOUSEHOLD,Dishwash,BrandB,2L,15.87,2017-02-09,N
+SKU0264,Snacks,Nuts,BrandA,250g,4.45,2015-03-04,N
+SKU0265,Personal Care,Deodorant,BrandB,100g,27.69,2022-11-22,N
+SKU0266,DAIRY,Cheese,BrandC,1L,4.88,2020-12-25,N
+SKU0267,DAIRY,Butter,BrandC,500ml,3.56,2016-02-08,N
+SKU0268,Dairy,Yogurt,BrandA,1L,2.56,,N
+SKU0269,household,Laundry,BrandB,1L,23.5,2019-09-07,N
+SKU0270,SNACKS,Bars,BrandC,500g,2.4,2020-08-07,N
+SKU0271,personal care,Haircare,BrandC,500ml,29.1,2020-07-02,N
+SKU0272,SNACKS,Crisps,,250ml,3.83,2021-01-29,N
+SKU0273,Beverages,Energy,BrandB,500g,7.64,2023-07-28,N
+SKU0274,SNACKS,Biscuits,BrandC,250ml,1.09,2017-06-14,N
+SKU0275,HOUSEHOLD,Air Care,BrandA,250ml,16.67,2020-06-02,N
+SKU0276,HOUSEHOLD,Paper Products,,1L,14.69,,N
+SKU0277,Beverages,Carbonated,BrandA,100g,4.76,2019-10-30,N
+SKU0278,snacks,Bars,BrandD,250ml,1.81,2017-10-30,N
+SKU0279,DAIRY,Yogurt,BrandC,250g,5.8,2017-09-23,N
+SKU0280,Beverages,Carbonated,BrandD,2L,5.75,2023-07-09,N
+SKU0281,Personal Care,Haircare,BrandA,2L,17.92,,N
+SKU0282,PERSONAL CARE,Skincare,BrandB,500ml,20.41,2016-01-26,N
+SKU0283,Household,Paper Products,,100g,12.94,,N
+SKU0284,Beverages,Dairy Drinks,BrandB,500g,2.67,2015-03-06,N
+SKU0285,Personal Care,Body Wash,BrandD,250g,28.08,2021-04-28,N
+SKU0286,HOUSEHOLD,Cleaning,,250g,9.63,2016-07-27,N
+SKU0287,dairy,Cream,,100g,1.27,2015-11-08,N
+SKU0288,personal care,Deodorant,BrandD,500ml,29.16,2022-02-10,N
+SKU0289,DAIRY,Cream,BrandD,250ml,3.77,2017-01-30,N
+SKU0290,Household,Paper Products,BrandB,2L,8.79,2015-10-29,N
+SKU0291,Snacks,Crisps,BrandC,2L,3.91,2016-03-12,N
+SKU0292,Dairy,Butter,BrandD,100g,4.81,2015-12-24,N
+SKU0293,household,Dishwash,BrandA,100g,13.79,2016-01-03,N
+SKU0294,household,Air Care,BrandD,500g,20.04,2015-02-20,N
+SKU0295,BEVERAGES,Dairy Drinks,BrandB,250g,6.21,2017-09-21,N
+SKU0296,personal care,Haircare,BrandA,500ml,7.58,2018-01-04,N
+SKU0297,Personal Care,Oral Care,BrandC,500ml,10.45,2023-10-11,N
+SKU0298,Personal Care,Oral Care,BrandA,2L,19.03,2016-03-14,N
+SKU0299,dairy,Cheese,BrandD,500g,5.21,2018-09-11,N
+SKU0300,Household,Air Care,BrandC,500ml,5.13,2022-10-18,N
+SKU0301,PERSONAL CARE,Deodorant,,500g,29.16,2022-10-17,N
+SKU0302,snacks,Bars,BrandA,100g,2.17,2023-10-24,N
+SKU0303,SNACKS,Crisps,BrandD,250g,3.29,2022-08-24,N
+SKU0304,Snacks,Biscuits,BrandD,500ml,2.64,2022-10-08,N
+SKU0305,dairy,Butter,BrandA,2L,2.21,2023-01-08,N
+SKU0306,HOUSEHOLD,Air Care,,250ml,13.02,2020-09-06,N
+SKU0307,DAIRY,Milk,BrandA,500g,4.51,2021-08-29,N
+SKU0308,SNACKS,Crisps,,250g,3.56,2022-04-04,N
+SKU0309,personal care,Skincare,BrandA,250ml,29.1,2023-12-06,N
+SKU0310,DAIRY,Cream,BrandB,2L,2.11,2021-04-04,N
+SKU0311,DAIRY,Cream,BrandB,1L,2.96,2021-08-07,N
+SKU0312,Beverages,Juice,BrandC,1L,4.64,2015-12-18,N
+SKU0313,dairy,Butter,BrandA,2L,3.28,2020-06-01,N
+SKU0314,Personal Care,Skincare,BrandC,250g,11.61,2022-12-21,N
+SKU0315,Beverages,Dairy Drinks,BrandB,100g,5.9,2023-04-22,N
+SKU0316,Snacks,Biscuits,BrandB,500ml,2.19,2020-03-07,N
+SKU0317,personal care,Body Wash,BrandD,2L,13.68,2017-03-19,N
+SKU0318,BEVERAGES,Carbonated,,250ml,6.08,2023-06-09,N
+SKU0319,Household,Paper Products,BrandD,100g,6.3,2020-02-18,N
+SKU0320,Dairy,Cheese,BrandC,500g,3.98,2021-08-01,N
+SKU0321,personal care,Body Wash,,250ml,19.67,2022-12-01,N
+SKU0322,Snacks,Bars,BrandB,100g,2.12,2016-04-24,N
+SKU0323,personal care,Haircare,BrandD,250g,14.29,2019-04-21,N
+SKU0324,HOUSEHOLD,Laundry,BrandD,1L,17.95,2016-12-10,N
+SKU0325,Snacks,Bars,BrandA,2L,1.59,2021-12-12,N
+SKU0326,SNACKS,Biscuits,BrandD,250g,1.62,2021-04-19,N
+SKU0327,Personal Care,Skincare,,250ml,14.22,2020-06-24,N
+SKU0328,snacks,Nuts,BrandD,100g,2.03,2021-01-11,N
+SKU0329,personal care,Body Wash,BrandC,100g,17.84,2016-04-12,N
+SKU0330,beverages,Carbonated,BrandB,1L,6.44,2017-06-14,N
+SKU0331,beverages,Carbonated,BrandB,500ml,4.42,2015-12-23,N
+SKU0332,HOUSEHOLD,Air Care,BrandB,100g,17.85,2021-11-04,N
+SKU0333,SNACKS,Bars,,1L,4.1,2015-09-01,N
+SKU0334,household,Paper Products,,1L,14.39,2022-11-23,N
+SKU0335,Household,Air Care,BrandA,1L,24.67,2016-01-26,N
+SKU0336,SNACKS,Bars,BrandB,500g,3.75,2016-08-22,N
+SKU0337,PERSONAL CARE,Deodorant,BrandD,2L,16.22,2018-01-05,N
+SKU0338,beverages,Dairy Drinks,BrandC,250g,5.62,2016-01-17,N
+SKU0339,Dairy,Milk,BrandD,250g,3.27,2021-07-11,N
+SKU0340,Dairy,Butter,BrandB,2L,5.25,2019-06-18,N
+SKU0341,DAIRY,Yogurt,,500g,2.61,2024-06-18,Y
+SKU0342,PERSONAL CARE,Deodorant,BrandA,250ml,24.28,2023-01-04,Y
+SKU0343,SNACKS,Nuts,BrandC,500ml,2.65,2023-07-07,Y
+SKU0344,dairy,Yogurt,BrandA,2L,1.47,2024-05-03,Y
+SKU0345,Dairy,Milk,BrandA,500ml,4.63,2023-07-21,Y
+SKU0346,personal care,Skincare,BrandA,250g,5.1,2023-09-22,Y
+SKU0347,dairy,Milk,BrandB,2L,5.09,2024-12-05,Y
+SKU0348,beverages,Water,BrandB,2L,6.25,2023-02-11,Y
+SKU0349,SNACKS,Crisps,,250g,3.49,2023-02-17,Y
+SKU0350,Snacks,Biscuits,,250g,2.65,2023-11-24,Y
+SKU0351,Personal Care,Body Wash,BrandD,1L,26.22,2023-02-05,Y
+SKU0352,PERSONAL CARE,Skincare,BrandB,100g,11.49,2023-04-09,Y
+SKU0353,HOUSEHOLD,Paper Products,BrandB,100g,15.8,2024-12-01,Y
+SKU0354,Household,Laundry,BrandD,2L,13.72,2024-05-21,Y
+SKU0355,beverages,Water,BrandB,2L,3.07,2023-09-01,Y
+SKU0356,Household,Cleaning,,250ml,11.68,2023-08-25,Y
+SKU0357,beverages,Dairy Drinks,BrandC,250g,3.2,2023-01-26,Y
+SKU0358,Household,Dishwash,,100g,19.64,2024-12-13,Y
+SKU0359,Snacks,Nuts,,1L,1.97,2024-02-17,Y
+SKU0360,personal care,Haircare,BrandA,500ml,18.83,2023-05-23,Y
+SKU0361,BEVERAGES,Carbonated,BrandC,250g,7.51,2023-08-20,Y
+SKU0362,Snacks,Biscuits,BrandC,100g,1.3,2023-12-01,Y
+SKU0363,Household,Paper Products,BrandA,500g,20.01,2024-03-12,Y
+SKU0364,Beverages,Water,,250g,3.68,2024-05-17,Y
+SKU0365,BEVERAGES,Juice,BrandC,500ml,4.72,2024-01-16,Y
+SKU0366,DAIRY,Milk,BrandA,500g,4.87,2023-04-24,Y
+SKU0367,Beverages,Juice,BrandA,100g,3.09,2024-06-13,Y
+SKU0368,personal care,Oral Care,BrandA,100g,9.06,2023-07-24,Y
+SKU0369,DAIRY,Milk,BrandD,250ml,1.6,2023-03-08,Y
+SKU0370,PERSONAL CARE,Deodorant,BrandA,1L,26.38,2024-06-03,Y
+SKU0371,Snacks,Biscuits,BrandC,100g,2.02,2024-12-20,Y
+SKU0372,Personal Care,Haircare,BrandA,2L,29.94,2023-12-18,Y
+SKU0373,BEVERAGES,Carbonated,BrandC,250ml,3.01,2024-11-27,Y
+SKU0374,PERSONAL CARE,Haircare,BrandD,2L,25.92,2024-02-07,Y
+SKU0375,Beverages,Carbonated,BrandB,500g,7.82,2023-12-09,Y
+SKU0376,Household,Dishwash,BrandA,100g,11.5,2024-08-24,Y
+SKU0377,SNACKS,Crisps,BrandD,250g,3.48,2024-02-19,Y
+SKU0378,snacks,Bars,BrandC,2L,1.79,2024-06-26,Y
+SKU0379,DAIRY,Milk,BrandB,250ml,2.17,2023-03-25,Y
+SKU0380,SNACKS,Bars,BrandB,2L,2.69,2024-07-04,Y
+SKU0381,DAIRY,Cheese,,250ml,3.32,2023-02-06,Y
+SKU0382,SNACKS,Nuts,BrandC,2L,4.31,2024-03-03,Y
+SKU0383,Household,Cleaning,BrandD,500g,3.13,2024-05-27,Y
+SKU0384,Personal Care,Haircare,BrandA,250ml,18.01,2023-02-15,Y
+SKU0385,beverages,Water,BrandA,100g,6.9,2023-03-07,Y
+SKU0386,Household,Air Care,BrandB,250ml,7.95,2023-01-03,Y
+SKU0387,DAIRY,Butter,BrandD,2L,1.61,2024-01-06,Y
+SKU0388,Beverages,Juice,BrandC,1L,3.99,2024-03-12,Y
+SKU0389,PERSONAL CARE,Haircare,BrandC,2L,26.85,2023-10-20,Y
+SKU0390,personal care,Deodorant,BrandB,2L,26.84,2024-01-03,Y
+SKU0391,SNACKS,Crisps,BrandD,500g,3.5,2023-11-26,Y
+SKU0392,DAIRY,Cheese,BrandD,1L,3.4,2024-06-19,Y
+SKU0393,snacks,Crisps,BrandD,100g,0.91,2023-01-26,Y
+SKU0394,Dairy,Yogurt,BrandC,100g,4.83,2023-03-04,Y
+SKU0395,beverages,Water,BrandB,500ml,6.47,2023-10-28,Y
+SKU0396,SNACKS,Bars,,100g,3.29,2024-10-01,Y
+SKU0397,snacks,Nuts,BrandD,250ml,3.17,2023-08-18,Y
+SKU0398,beverages,Carbonated,BrandC,100g,1.87,2023-01-17,Y
+SKU0399,snacks,Crisps,BrandA,500ml,4.19,2024-12-06,Y
+SKU0400,HOUSEHOLD,Paper Products,BrandA,1L,18.21,2023-02-28,Y
+SKU0361,Personal Care,Carbonated,,250g,7.51,2023-08-20,Y
+SKU0052,Dairy,Cream,BrandC,1L,3.88,2016-12-18,N
+SKU0166,Snacks,Crisps,BrandB,500ml,4.21,,N
+SKU0375,Personal Care,Carbonated,BrandD,500g,7.82,2023-12-09,Y
+SKU0333,Dairy,Bars,BrandB,1L,4.1,2015-09-01,N

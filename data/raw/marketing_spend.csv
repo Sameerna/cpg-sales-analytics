@@ -1,0 +1,541 @@
+period,year,month,category,channel,spend_usd,impressions,campaign_active
+2022-01,2022,1,Beverages,digital,3395.24,426451,Y
+2022-01,2022,1,Beverages,tv,3596.71,127750,Y
+2022-01,2022,1,Beverages,in_store,2260.0,,Y
+2022-01,2022,1,Snacks,digital,2586.98,362208,Y
+2022-01,2022,1,Snacks,tv,3189.58,102458,Y
+2022-01,2022,1,Snacks,in_store,1898.66,,N
+2022-01,2022,1,Dairy,digital,2087.59,170727,Y
+2022-01,2022,1,Dairy,tv,2474.29,71428,Y
+2022-01,2022,1,Dairy,in_store,1609.78,,N
+2022-01,2022,1,Personal Care,digital,6255.99,823108,Y
+2022-01,2022,1,Personal Care,tv,7278.5,362779,Y
+2022-01,2022,1,Personal Care,in_store,4654.18,,Y
+2022-01,2022,1,Household,digital,3552.68,461620,Y
+2022-01,2022,1,Household,tv,4201.75,164496,Y
+2022-01,2022,1,Household,in_store,2571.8,,Y
+2022-02,2022,2,Beverages,digital,3420.5,345517,Y
+2022-02,2022,2,Beverages,tv,3747.42,148879,Y
+2022-02,2022,2,Beverages,in_store,2462.56,,Y
+2022-02,2022,2,Snacks,digital,2831.7,319853,Y
+2022-02,2022,2,Snacks,tv,3307.23,138095,Y
+2022-02,2022,2,Snacks,in_store,2052.29,,Y
+2022-02,2022,2,Dairy,digital,2408.5,352326,Y
+2022-02,2022,2,Dairy,tv,2686.78,106485,Y
+2022-02,2022,2,Dairy,in_store,1586.87,,N
+2022-02,2022,2,Personal Care,digital,6559.77,924929,Y
+2022-02,2022,2,Personal Care,tv,7475.4,348393,Y
+2022-02,2022,2,Personal Care,in_store,4699.5,,Y
+2022-02,2022,2,Household,digital,3888.09,437267,Y
+2022-02,2022,2,Household,tv,4141.32,89495,Y
+2022-02,2022,2,Household,in_store,2756.89,,Y
+2022-03,2022,3,Beverages,digital,3318.54,375178,Y
+2022-03,2022,3,Beverages,tv,3470.11,81875,Y
+2022-03,2022,3,Beverages,in_store,2327.45,,Y
+2022-03,2022,3,Snacks,digital,2740.64,298503,Y
+2022-03,2022,3,Snacks,tv,3093.49,75862,Y
+2022-03,2022,3,Snacks,in_store,1998.92,,N
+2022-03,2022,3,Dairy,digital,2151.59,320809,Y
+2022-03,2022,3,Dairy,tv,2480.04,123008,Y
+2022-03,2022,3,Dairy,in_store,1469.72,,N
+2022-03,2022,3,Personal Care,digital,6606.85,611959,Y
+2022-03,2022,3,Personal Care,tv,6668.27,199907,Y
+2022-03,2022,3,Personal Care,in_store,4661.6,,Y
+2022-03,2022,3,Household,digital,3575.33,300545,Y
+2022-03,2022,3,Household,tv,3958.09,104024,Y
+2022-03,2022,3,Household,in_store,2609.64,,Y
+2022-04,2022,4,Beverages,digital,3202.29,432196,Y
+2022-04,2022,4,Beverages,tv,3636.4,86845,Y
+2022-04,2022,4,Beverages,in_store,2269.18,,Y
+2022-04,2022,4,Snacks,digital,2743.44,301865,Y
+2022-04,2022,4,Snacks,tv,2941.21,59236,Y
+2022-04,2022,4,Snacks,in_store,1910.04,,N
+2022-04,2022,4,Dairy,digital,2261.34,331297,Y
+2022-04,2022,4,Dairy,tv,2450.74,104659,Y
+2022-04,2022,4,Dairy,in_store,1527.61,,N
+2022-04,2022,4,Personal Care,digital,6136.08,492657,Y
+2022-04,2022,4,Personal Care,tv,7039.04,188561,Y
+2022-04,2022,4,Personal Care,in_store,4609.19,,Y
+2022-04,2022,4,Household,digital,3614.7,315164,Y
+2022-04,2022,4,Household,tv,3931.8,114743,Y
+2022-04,2022,4,Household,in_store,2427.8,,Y
+2022-05,2022,5,Beverages,digital,5100.54,570826,Y
+2022-05,2022,5,Beverages,tv,5100.88,182221,Y
+2022-05,2022,5,Beverages,in_store,3302.01,,Y
+2022-05,2022,5,Snacks,digital,3315.2,296263,Y
+2022-05,2022,5,Snacks,tv,3562.08,123623,Y
+2022-05,2022,5,Snacks,in_store,2271.46,,Y
+2022-05,2022,5,Dairy,digital,2516.28,361042,Y
+2022-05,2022,5,Dairy,tv,2799.67,57599,Y
+2022-05,2022,5,Dairy,in_store,1723.96,,N
+2022-05,2022,5,Personal Care,digital,7961.82,754647,Y
+2022-05,2022,5,Personal Care,tv,7540.06,264950,Y
+2022-05,2022,5,Personal Care,in_store,4975.9,,Y
+2022-05,2022,5,Household,digital,4430.82,600149,Y
+2022-05,2022,5,Household,tv,4468.46,175206,Y
+2022-05,2022,5,Household,in_store,3034.86,,Y
+2022-06,2022,6,Beverages,digital,5618.2,468317,Y
+2022-06,2022,6,Beverages,tv,5450.64,245734,Y
+2022-06,2022,6,Beverages,in_store,3577.05,,Y
+2022-06,2022,6,Snacks,digital,3568.05,396417,Y
+2022-06,2022,6,Snacks,tv,3639.62,100388,Y
+2022-06,2022,6,Snacks,in_store,2547.95,,Y
+2022-06,2022,6,Dairy,digital,2881.07,368782,Y
+2022-06,2022,6,Dairy,tv,2877.11,93869,Y
+2022-06,2022,6,Dairy,in_store,1918.3,,N
+2022-06,2022,6,Personal Care,digital,8675.68,1072277,Y
+2022-06,2022,6,Personal Care,tv,9001.73,293139,Y
+2022-06,2022,6,Personal Care,in_store,6059.87,,Y
+2022-06,2022,6,Household,digital,4953.22,610429,Y
+2022-06,2022,6,Household,tv,4933.06,214799,Y
+2022-06,2022,6,Household,in_store,3329.28,,Y
+2022-07,2022,7,Beverages,digital,4438.98,613488,Y
+2022-07,2022,7,Beverages,tv,4506.07,138506,Y
+2022-07,2022,7,Beverages,in_store,2847.88,,Y
+2022-07,2022,7,Snacks,digital,2781.5,329245,Y
+2022-07,2022,7,Snacks,tv,2986.04,121370,Y
+2022-07,2022,7,Snacks,in_store,1912.17,,N
+2022-07,2022,7,Dairy,digital,2242.28,181383,Y
+2022-07,2022,7,Dairy,tv,2200.36,51296,Y
+2022-07,2022,7,Dairy,in_store,1544.07,,N
+2022-07,2022,7,Personal Care,digital,6714.38,983396,Y
+2022-07,2022,7,Personal Care,tv,6879.87,153087,Y
+2022-07,2022,7,Personal Care,in_store,4570.32,,Y
+2022-07,2022,7,Household,digital,3994.45,499719,Y
+2022-07,2022,7,Household,tv,3807.91,187801,Y
+2022-07,2022,7,Household,in_store,2494.25,,Y
+2022-08,2022,8,Beverages,digital,3691.18,521157,Y
+2022-08,2022,8,Beverages,tv,3607.66,111139,Y
+2022-08,2022,8,Beverages,in_store,2396.29,,Y
+2022-08,2022,8,Snacks,digital,2960.51,260859,Y
+2022-08,2022,8,Snacks,tv,3006.09,140410,Y
+2022-08,2022,8,Snacks,in_store,1866.01,,N
+2022-08,2022,8,Dairy,digital,2299.78,288171,Y
+2022-08,2022,8,Dairy,tv,2283.46,106947,Y
+2022-08,2022,8,Dairy,in_store,1641.22,,N
+2022-08,2022,8,Personal Care,digital,6798.11,892692,Y
+2022-08,2022,8,Personal Care,tv,6689.89,202581,Y
+2022-08,2022,8,Personal Care,in_store,4401.71,,Y
+2022-08,2022,8,Household,digital,3937.1,440788,Y
+2022-08,2022,8,Household,tv,4002.11,162874,Y
+2022-08,2022,8,Household,in_store,2610.6,,Y
+2022-09,2022,9,Beverages,digital,4066.27,372773,Y
+2022-09,2022,9,Beverages,tv,3588.98,149991,Y
+2022-09,2022,9,Beverages,in_store,2669.66,,Y
+2022-09,2022,9,Snacks,digital,4724.91,412295,Y
+2022-09,2022,9,Snacks,tv,4525.64,156045,Y
+2022-09,2022,9,Snacks,in_store,2991.99,,Y
+2022-09,2022,9,Dairy,digital,2593.93,318515,Y
+2022-09,2022,9,Dairy,tv,2553.27,97894,Y
+2022-09,2022,9,Dairy,in_store,1759.57,,N
+2022-09,2022,9,Personal Care,digital,7901.95,1034440,Y
+2022-09,2022,9,Personal Care,tv,7528.63,259680,Y
+2022-09,2022,9,Personal Care,in_store,4946.62,,Y
+2022-09,2022,9,Household,digital,4518.72,500891,Y
+2022-09,2022,9,Household,tv,3959.11,156975,Y
+2022-09,2022,9,Household,in_store,2692.0,,Y
+2022-10,2022,10,Beverages,digital,6022.53,795297,Y
+2022-10,2022,10,Beverages,tv,5713.02,152649,Y
+2022-10,2022,10,Beverages,in_store,4041.36,,Y
+2022-10,2022,10,Snacks,digital,5193.16,604156,Y
+2022-10,2022,10,Snacks,tv,4744.3,182879,Y
+2022-10,2022,10,Snacks,in_store,3199.37,,Y
+2022-10,2022,10,Dairy,digital,4095.86,465842,Y
+2022-10,2022,10,Dairy,tv,3786.3,148582,Y
+2022-10,2022,10,Dairy,in_store,2486.26,,Y
+2022-10,2022,10,Personal Care,digital,12062.82,1718280,Y
+2022-10,2022,10,Personal Care,tv,10988.19,223602,Y
+2022-10,2022,10,Personal Care,in_store,7842.12,,Y
+2022-10,2022,10,Household,digital,6678.85,753709,Y
+2022-10,2022,10,Household,tv,6206.27,154921,Y
+2022-10,2022,10,Household,in_store,4402.65,,Y
+2022-11,2022,11,Beverages,digital,5361.97,533360,Y
+2022-11,2022,11,Beverages,tv,4961.8,181179,Y
+2022-11,2022,11,Beverages,in_store,3428.73,,Y
+2022-11,2022,11,Snacks,digital,4689.3,401020,Y
+2022-11,2022,11,Snacks,tv,4108.91,152814,Y
+2022-11,2022,11,Snacks,in_store,2773.22,,Y
+2022-11,2022,11,Dairy,digital,3635.57,371280,Y
+2022-11,2022,11,Dairy,tv,3464.47,146745,Y
+2022-11,2022,11,Dairy,in_store,2202.32,,Y
+2022-11,2022,11,Personal Care,digital,10502.99,866583,Y
+2022-11,2022,11,Personal Care,tv,9688.61,433829,Y
+2022-11,2022,11,Personal Care,in_store,6945.81,,Y
+2022-11,2022,11,Household,digital,6340.92,790254,Y
+2022-11,2022,11,Household,tv,5724.22,211051,Y
+2022-11,2022,11,Household,in_store,3916.13,,Y
+2022-12,2022,12,Beverages,digital,3486.6,480355,Y
+2022-12,2022,12,Beverages,tv,3247.56,147210,Y
+2022-12,2022,12,Beverages,in_store,2192.82,,Y
+2022-12,2022,12,Snacks,digital,3031.44,369825,Y
+2022-12,2022,12,Snacks,tv,2680.08,82811,Y
+2022-12,2022,12,Snacks,in_store,1849.76,,N
+2022-12,2022,12,Dairy,digital,2266.9,285909,Y
+2022-12,2022,12,Dairy,tv,1994.13,61128,N
+2022-12,2022,12,Dairy,in_store,1506.74,,N
+2022-12,2022,12,Personal Care,digital,7095.74,839698,Y
+2022-12,2022,12,Personal Care,tv,6043.73,140152,Y
+2022-12,2022,12,Personal Care,in_store,4508.79,,Y
+2022-12,2022,12,Household,digital,3933.66,540991,Y
+2022-12,2022,12,Household,tv,3582.49,115629,Y
+2022-12,2022,12,Household,in_store,2417.21,,Y
+2023-01,2023,1,Beverages,digital,3427.68,478687,Y
+2023-01,2023,1,Beverages,tv,3005.69,134464,Y
+2023-01,2023,1,Beverages,in_store,2150.17,,Y
+2023-01,2023,1,Snacks,digital,2920.88,388478,Y
+2023-01,2023,1,Snacks,tv,2461.15,95977,Y
+2023-01,2023,1,Snacks,in_store,1880.85,,N
+2023-01,2023,1,Dairy,digital,2285.7,325535,Y
+2023-01,2023,1,Dairy,tv,2053.66,77380,Y
+2023-01,2023,1,Dairy,in_store,1479.84,,N
+2023-01,2023,1,Personal Care,digital,7249.0,582121,Y
+2023-01,2023,1,Personal Care,tv,6157.57,225347,Y
+2023-01,2023,1,Personal Care,in_store,4285.39,,Y
+2023-01,2023,1,Household,digital,3992.36,577718,Y
+2023-01,2023,1,Household,tv,3534.03,167178,Y
+2023-01,2023,1,Household,in_store,2512.65,,Y
+2023-02,2023,2,Beverages,digital,3696.73,322535,Y
+2023-02,2023,2,Beverages,tv,3089.05,117954,Y
+2023-02,2023,2,Beverages,in_store,2168.96,,Y
+2023-02,2023,2,Snacks,digital,3100.36,338889,Y
+2023-02,2023,2,Snacks,tv,2561.91,104463,Y
+2023-02,2023,2,Snacks,in_store,1793.92,,N
+2023-02,2023,2,Dairy,digital,2364.77,245936,Y
+2023-02,2023,2,Dairy,tv,1985.7,87656,N
+2023-02,2023,2,Dairy,in_store,1418.93,,N
+2023-02,2023,2,Personal Care,digital,7039.86,1000016,Y
+2023-02,2023,2,Personal Care,tv,5920.61,268157,Y
+2023-02,2023,2,Personal Care,in_store,4314.44,,Y
+2023-02,2023,2,Household,digital,3907.85,514184,Y
+2023-02,2023,2,Household,tv,3397.15,90093,Y
+2023-02,2023,2,Household,in_store,2382.44,,Y
+2023-03,2023,3,Beverages,digital,4116.03,594698,Y
+2023-03,2023,3,Beverages,tv,3227.68,133341,Y
+2023-03,2023,3,Beverages,in_store,2580.87,,Y
+2023-03,2023,3,Snacks,digital,3258.7,384443,Y
+2023-03,2023,3,Snacks,tv,2830.52,116930,Y
+2023-03,2023,3,Snacks,in_store,2106.71,,Y
+2023-03,2023,3,Dairy,digital,2710.53,327422,Y
+2023-03,2023,3,Dairy,tv,2332.73,96350,Y
+2023-03,2023,3,Dairy,in_store,1671.15,,N
+2023-03,2023,3,Personal Care,digital,8166.23,958496,Y
+2023-03,2023,3,Personal Care,tv,6761.31,220902,Y
+2023-03,2023,3,Personal Care,in_store,4557.3,,Y
+2023-03,2023,3,Household,digital,4312.91,460018,Y
+2023-03,2023,3,Household,tv,3556.67,77173,Y
+2023-03,2023,3,Household,in_store,2673.76,,Y
+2023-04,2023,4,Beverages,digital,4338.69,554646,Y
+2023-04,2023,4,Beverages,tv,3235.09,70722,Y
+2023-04,2023,4,Beverages,in_store,2568.43,,Y
+2023-04,2023,4,Snacks,digital,3346.73,394519,Y
+2023-04,2023,4,Snacks,tv,2755.23,92514,Y
+2023-04,2023,4,Snacks,in_store,2105.34,,Y
+2023-04,2023,4,Dairy,digital,2807.48,335022,Y
+2023-04,2023,4,Dairy,tv,2174.14,85690,Y
+2023-04,2023,4,Dairy,in_store,1646.44,,N
+2023-04,2023,4,Personal Care,digital,8056.01,1093831,Y
+2023-04,2023,4,Personal Care,tv,6648.92,271196,Y
+2023-04,2023,4,Personal Care,in_store,4636.09,,Y
+2023-04,2023,4,Household,digital,4543.96,496017,Y
+2023-04,2023,4,Household,tv,3833.66,155472,Y
+2023-04,2023,4,Household,in_store,2904.17,,Y
+2023-05,2023,5,Beverages,digital,5996.73,564988,Y
+2023-05,2023,5,Beverages,tv,4806.29,220192,Y
+2023-05,2023,5,Beverages,in_store,3476.56,,Y
+2023-05,2023,5,Snacks,digital,3795.61,472041,Y
+2023-05,2023,5,Snacks,tv,3154.96,97905,Y
+2023-05,2023,5,Snacks,in_store,2351.58,,Y
+2023-05,2023,5,Dairy,digital,3196.63,299693,Y
+2023-05,2023,5,Dairy,tv,2527.77,65228,Y
+2023-05,2023,5,Dairy,in_store,1855.24,,N
+2023-05,2023,5,Personal Care,digital,9546.6,813492,Y
+2023-05,2023,5,Personal Care,tv,7543.96,317241,Y
+2023-05,2023,5,Personal Care,in_store,5231.92,,Y
+2023-05,2023,5,Household,digital,4964.59,494164,Y
+2023-05,2023,5,Household,tv,4023.14,99885,Y
+2023-05,2023,5,Household,in_store,3215.51,,Y
+2023-06,2023,6,Beverages,digital,5831.78,849250,Y
+2023-06,2023,6,Beverages,tv,4318.72,206688,Y
+2023-06,2023,6,Beverages,in_store,3493.01,,Y
+2023-06,2023,6,Snacks,digital,4007.74,496060,Y
+2023-06,2023,6,Snacks,tv,3121.55,90633,Y
+2023-06,2023,6,Snacks,in_store,2373.19,,Y
+2023-06,2023,6,Dairy,digital,3136.44,266916,Y
+2023-06,2023,6,Dairy,tv,2464.54,88136,Y
+2023-06,2023,6,Dairy,in_store,1929.38,,N
+2023-06,2023,6,Personal Care,digital,9121.06,1231690,Y
+2023-06,2023,6,Personal Care,tv,6802.11,246864,Y
+2023-06,2023,6,Personal Care,in_store,5329.45,,Y
+2023-06,2023,6,Household,digital,5122.99,726633,Y
+2023-06,2023,6,Household,tv,4089.72,122413,Y
+2023-06,2023,6,Household,in_store,3011.62,,Y
+2023-07,2023,7,Beverages,digital,5565.1,630191,Y
+2023-07,2023,7,Beverages,tv,4182.72,178033,Y
+2023-07,2023,7,Beverages,in_store,3267.15,,Y
+2023-07,2023,7,Snacks,digital,3525.43,367422,Y
+2023-07,2023,7,Snacks,tv,2699.52,106004,Y
+2023-07,2023,7,Snacks,in_store,2235.89,,Y
+2023-07,2023,7,Dairy,digital,2858.21,236635,Y
+2023-07,2023,7,Dairy,tv,2302.69,72399,Y
+2023-07,2023,7,Dairy,in_store,1767.7,,N
+2023-07,2023,7,Personal Care,digital,8224.84,805716,Y
+2023-07,2023,7,Personal Care,tv,6611.63,137132,Y
+2023-07,2023,7,Personal Care,in_store,5015.92,,Y
+2023-07,2023,7,Household,digital,5021.17,582463,Y
+2023-07,2023,7,Household,tv,3698.54,127984,Y
+2023-07,2023,7,Household,in_store,2803.16,,Y
+2023-08,2023,8,Beverages,digital,4743.84,406851,Y
+2023-08,2023,8,Beverages,tv,3422.87,168230,Y
+2023-08,2023,8,Beverages,in_store,2875.72,,Y
+2023-08,2023,8,Snacks,digital,4038.9,500360,Y
+2023-08,2023,8,Snacks,tv,2886.53,112243,Y
+2023-08,2023,8,Snacks,in_store,2265.77,,Y
+2023-08,2023,8,Dairy,digital,3280.13,454286,Y
+2023-08,2023,8,Dairy,tv,2307.98,103541,Y
+2023-08,2023,8,Dairy,in_store,1936.8,,N
+2023-08,2023,8,Personal Care,digital,9619.63,1062648,Y
+2023-08,2023,8,Personal Care,tv,7155.52,158592,Y
+2023-08,2023,8,Personal Care,in_store,5544.17,,Y
+2023-08,2023,8,Household,digital,5111.76,665452,Y
+2023-08,2023,8,Household,tv,3780.18,83910,Y
+2023-08,2023,8,Household,in_store,3010.08,,Y
+2023-09,2023,9,Beverages,digital,4306.87,592252,Y
+2023-09,2023,9,Beverages,tv,3379.44,108915,Y
+2023-09,2023,9,Beverages,in_store,2569.45,,Y
+2023-09,2023,9,Snacks,digital,5200.04,531175,Y
+2023-09,2023,9,Snacks,tv,3745.19,88196,Y
+2023-09,2023,9,Snacks,in_store,2863.57,,Y
+2023-09,2023,9,Dairy,digital,3066.21,258869,Y
+2023-09,2023,9,Dairy,tv,2217.24,47372,Y
+2023-09,2023,9,Dairy,in_store,1781.33,,N
+2023-09,2023,9,Personal Care,digital,8625.82,993682,Y
+2023-09,2023,9,Personal Care,tv,6179.07,250724,Y
+2023-09,2023,9,Personal Care,in_store,5074.19,,Y
+2023-09,2023,9,Household,digital,4890.95,708543,Y
+2023-09,2023,9,Household,tv,3563.93,159178,Y
+2023-09,2023,9,Household,in_store,2734.36,,Y
+2023-10,2023,10,Beverages,digital,6021.96,796541,Y
+2023-10,2023,10,Beverages,tv,4494.56,204430,Y
+2023-10,2023,10,Beverages,in_store,3448.01,,Y
+2023-10,2023,10,Snacks,digital,5232.14,527734,Y
+2023-10,2023,10,Snacks,tv,3778.28,184988,Y
+2023-10,2023,10,Snacks,in_store,3041.18,,Y
+2023-10,2023,10,Dairy,digital,4191.45,616216,Y
+2023-10,2023,10,Dairy,tv,2767.76,127989,Y
+2023-10,2023,10,Dairy,in_store,2262.63,,Y
+2023-10,2023,10,Personal Care,digital,11494.82,1380416,Y
+2023-10,2023,10,Personal Care,tv,8397.65,305890,Y
+2023-10,2023,10,Personal Care,in_store,6560.82,,Y
+2023-10,2023,10,Household,digital,6684.31,881661,Y
+2023-10,2023,10,Household,tv,4959.61,130696,Y
+2023-10,2023,10,Household,in_store,4069.97,,Y
+2023-11,2023,11,Beverages,digital,6932.72,643907,Y
+2023-11,2023,11,Beverages,tv,5005.14,138053,Y
+2023-11,2023,11,Beverages,in_store,3889.79,,Y
+2023-11,2023,11,Snacks,digital,6093.93,729507,Y
+2023-11,2023,11,Snacks,tv,3939.05,167532,Y
+2023-11,2023,11,Snacks,in_store,3536.64,,Y
+2023-11,2023,11,Dairy,digital,4816.61,602688,Y
+2023-11,2023,11,Dairy,tv,3157.43,126772,Y
+2023-11,2023,11,Dairy,in_store,2629.89,,Y
+2023-11,2023,11,Personal Care,digital,13557.14,1635556,Y
+2023-11,2023,11,Personal Care,tv,10054.15,308804,Y
+2023-11,2023,11,Personal Care,in_store,8001.4,,Y
+2023-11,2023,11,Household,digital,7776.59,777344,Y
+2023-11,2023,11,Household,tv,5260.54,135748,Y
+2023-11,2023,11,Household,in_store,4488.87,,Y
+2023-12,2023,12,Beverages,digital,4158.73,534571,Y
+2023-12,2023,12,Beverages,tv,2655.09,98253,Y
+2023-12,2023,12,Beverages,in_store,2351.59,,Y
+2023-12,2023,12,Snacks,digital,3567.69,327530,Y
+2023-12,2023,12,Snacks,tv,2249.44,98007,Y
+2023-12,2023,12,Snacks,in_store,1941.5,,N
+2023-12,2023,12,Dairy,digital,2767.42,274991,Y
+2023-12,2023,12,Dairy,tv,1808.04,73022,N
+2023-12,2023,12,Dairy,in_store,1495.31,,N
+2023-12,2023,12,Personal Care,digital,7943.57,883126,Y
+2023-12,2023,12,Personal Care,tv,5495.56,190196,Y
+2023-12,2023,12,Personal Care,in_store,4262.52,,Y
+2023-12,2023,12,Household,digital,4614.5,395638,Y
+2023-12,2023,12,Household,tv,2989.29,133900,Y
+2023-12,2023,12,Household,in_store,2634.07,,Y
+2024-01,2024,1,Beverages,digital,4309.44,533781,Y
+2024-01,2024,1,Beverages,tv,2825.95,132150,Y
+2024-01,2024,1,Beverages,in_store,2406.0,,Y
+2024-01,2024,1,Snacks,digital,3555.43,486684,Y
+2024-01,2024,1,Snacks,tv,2320.76,99969,Y
+2024-01,2024,1,Snacks,in_store,1881.63,,N
+2024-01,2024,1,Dairy,digital,2677.31,263027,Y
+2024-01,2024,1,Dairy,tv,1914.65,69291,N
+2024-01,2024,1,Dairy,in_store,1573.68,,N
+2024-01,2024,1,Personal Care,digital,7900.52,849107,Y
+2024-01,2024,1,Personal Care,tv,5583.03,210413,Y
+2024-01,2024,1,Personal Care,in_store,4681.77,,Y
+2024-01,2024,1,Household,digital,4507.68,518737,Y
+2024-01,2024,1,Household,tv,2944.42,91029,Y
+2024-01,2024,1,Household,in_store,2456.62,,Y
+2024-02,2024,2,Beverages,digital,4488.39,667557,Y
+2024-02,2024,2,Beverages,tv,2798.48,119540,Y
+2024-02,2024,2,Beverages,in_store,2261.39,,Y
+2024-02,2024,2,Snacks,digital,3452.66,413093,Y
+2024-02,2024,2,Snacks,tv,2304.97,106410,Y
+2024-02,2024,2,Snacks,in_store,1885.63,,N
+2024-02,2024,2,Dairy,digital,2925.92,426430,Y
+2024-02,2024,2,Dairy,tv,1747.72,74879,N
+2024-02,2024,2,Dairy,in_store,1521.88,,N
+2024-02,2024,2,Personal Care,digital,8143.89,784918,Y
+2024-02,2024,2,Personal Care,tv,5433.16,193075,Y
+2024-02,2024,2,Personal Care,in_store,4694.11,,Y
+2024-02,2024,2,Household,digital,4712.63,679811,Y
+2024-02,2024,2,Household,tv,3169.69,67188,Y
+2024-02,2024,2,Household,in_store,2645.1,,Y
+2024-03,2024,3,Beverages,digital,4402.65,547468,Y
+2024-03,2024,3,Beverages,tv,2570.58,108625,Y
+2024-03,2024,3,Beverages,in_store,2296.51,,Y
+2024-03,2024,3,Snacks,digital,3529.29,375397,Y
+2024-03,2024,3,Snacks,tv,2165.17,81476,Y
+2024-03,2024,3,Snacks,in_store,1974.45,,N
+2024-03,2024,3,Dairy,digital,2685.39,262123,Y
+2024-03,2024,3,Dairy,tv,1836.31,49005,N
+2024-03,2024,3,Dairy,in_store,1504.76,,N
+2024-03,2024,3,Personal Care,digital,8437.05,878737,Y
+2024-03,2024,3,Personal Care,tv,5263.85,245375,Y
+2024-03,2024,3,Personal Care,in_store,4212.0,,Y
+2024-03,2024,3,Household,digital,4851.45,537506,Y
+2024-03,2024,3,Household,tv,2843.48,100762,Y
+2024-03,2024,3,Household,in_store,2476.28,,Y
+2024-04,2024,4,Beverages,digital,4141.13,505803,Y
+2024-04,2024,4,Beverages,tv,2700.52,107570,Y
+2024-04,2024,4,Beverages,in_store,2282.21,,Y
+2024-04,2024,4,Snacks,digital,3512.71,308885,Y
+2024-04,2024,4,Snacks,tv,2219.52,76286,Y
+2024-04,2024,4,Snacks,in_store,1935.64,,N
+2024-04,2024,4,Dairy,digital,2900.8,315499,Y
+2024-04,2024,4,Dairy,tv,1700.31,40529,N
+2024-04,2024,4,Dairy,in_store,1548.75,,N
+2024-04,2024,4,Personal Care,digital,8033.32,930941,Y
+2024-04,2024,4,Personal Care,tv,5288.59,129073,Y
+2024-04,2024,4,Personal Care,in_store,4326.52,,Y
+2024-04,2024,4,Household,digital,4965.78,576849,Y
+2024-04,2024,4,Household,tv,2880.9,141386,Y
+2024-04,2024,4,Household,in_store,2592.83,,Y
+2024-05,2024,5,Beverages,digital,8318.94,1143781,Y
+2024-05,2024,5,Beverages,tv,5062.22,134137,Y
+2024-05,2024,5,Beverages,in_store,4372.42,,Y
+2024-05,2024,5,Snacks,digital,5406.84,614848,Y
+2024-05,2024,5,Snacks,tv,3139.68,101483,Y
+2024-05,2024,5,Snacks,in_store,2781.18,,Y
+2024-05,2024,5,Dairy,digital,4373.73,584874,Y
+2024-05,2024,5,Dairy,tv,2616.11,92411,Y
+2024-05,2024,5,Dairy,in_store,2230.71,,Y
+2024-05,2024,5,Personal Care,digital,12886.95,1862997,Y
+2024-05,2024,5,Personal Care,tv,7610.2,167921,Y
+2024-05,2024,5,Personal Care,in_store,6647.9,,Y
+2024-05,2024,5,Household,digital,6963.89,565185,Y
+2024-05,2024,5,Household,tv,4316.89,204103,Y
+2024-05,2024,5,Household,in_store,3916.54,,Y
+2024-06,2024,6,Beverages,digital,8214.1,759143,Y
+2024-06,2024,6,Beverages,tv,4914.98,186741,Y
+2024-06,2024,6,Beverages,in_store,4446.36,,Y
+2024-06,2024,6,Snacks,digital,5435.92,721166,Y
+2024-06,2024,6,Snacks,tv,3021.99,120220,Y
+2024-06,2024,6,Snacks,in_store,2971.16,,Y
+2024-06,2024,6,Dairy,digital,4352.14,348536,Y
+2024-06,2024,6,Dairy,tv,2630.42,106155,Y
+2024-06,2024,6,Dairy,in_store,2269.42,,Y
+2024-06,2024,6,Personal Care,digital,12543.79,1771656,Y
+2024-06,2024,6,Personal Care,tv,7495.6,246370,Y
+2024-06,2024,6,Personal Care,in_store,6957.0,,Y
+2024-06,2024,6,Household,digital,7212.27,965052,Y
+2024-06,2024,6,Household,tv,4137.4,182619,Y
+2024-06,2024,6,Household,in_store,3963.79,,Y
+2024-07,2024,7,Beverages,digital,6369.83,699307,Y
+2024-07,2024,7,Beverages,tv,3497.43,150304,Y
+2024-07,2024,7,Beverages,in_store,3437.81,,Y
+2024-07,2024,7,Snacks,digital,4039.08,492284,Y
+2024-07,2024,7,Snacks,tv,2400.75,66582,Y
+2024-07,2024,7,Snacks,in_store,2092.72,,Y
+2024-07,2024,7,Dairy,digital,3453.73,278018,Y
+2024-07,2024,7,Dairy,tv,1916.55,68215,N
+2024-07,2024,7,Dairy,in_store,1739.26,,N
+2024-07,2024,7,Personal Care,digital,9544.09,1300860,Y
+2024-07,2024,7,Personal Care,tv,5526.52,128201,Y
+2024-07,2024,7,Personal Care,in_store,5099.07,,Y
+2024-07,2024,7,Household,digital,5667.27,557042,Y
+2024-07,2024,7,Household,tv,3198.57,118155,Y
+2024-07,2024,7,Household,in_store,2968.3,,Y
+2024-08,2024,8,Beverages,digital,5976.13,563301,Y
+2024-08,2024,8,Beverages,tv,3357.98,123328,Y
+2024-08,2024,8,Beverages,in_store,3025.77,,Y
+2024-08,2024,8,Snacks,digital,5061.44,576311,Y
+2024-08,2024,8,Snacks,tv,2919.8,108994,Y
+2024-08,2024,8,Snacks,in_store,2676.6,,Y
+2024-08,2024,8,Dairy,digital,3984.36,357256,Y
+2024-08,2024,8,Dairy,tv,2308.08,54407,Y
+2024-08,2024,8,Dairy,in_store,2027.82,,Y
+2024-08,2024,8,Personal Care,digital,12073.03,1768060,Y
+2024-08,2024,8,Personal Care,tv,6235.92,219818,Y
+2024-08,2024,8,Personal Care,in_store,6252.64,,Y
+2024-08,2024,8,Household,digital,6910.78,849899,Y
+2024-08,2024,8,Household,tv,3780.26,81508,Y
+2024-08,2024,8,Household,in_store,3435.04,,Y
+2024-09,2024,9,Beverages,digital,5870.23,807907,Y
+2024-09,2024,9,Beverages,tv,3065.25,116502,Y
+2024-09,2024,9,Beverages,in_store,2803.19,,Y
+2024-09,2024,9,Snacks,digital,6488.86,687549,Y
+2024-09,2024,9,Snacks,tv,3625.38,151304,Y
+2024-09,2024,9,Snacks,in_store,3557.76,,Y
+2024-09,2024,9,Dairy,digital,3760.16,473525,Y
+2024-09,2024,9,Dairy,tv,2005.54,98082,Y
+2024-09,2024,9,Dairy,in_store,1862.81,,N
+2024-09,2024,9,Personal Care,digital,11380.27,1050045,Y
+2024-09,2024,9,Personal Care,tv,5973.77,121394,Y
+2024-09,2024,9,Personal Care,in_store,5884.06,,Y
+2024-09,2024,9,Household,digital,6602.48,767675,Y
+2024-09,2024,9,Household,tv,3311.25,144101,Y
+2024-09,2024,9,Household,in_store,3251.87,,Y
+2024-10,2024,10,Beverages,digital,8186.41,1041161,Y
+2024-10,2024,10,Beverages,tv,4198.61,166477,Y
+2024-10,2024,10,Beverages,in_store,4313.0,,Y
+2024-10,2024,10,Snacks,digital,6465.67,642141,Y
+2024-10,2024,10,Snacks,tv,3512.92,140832,Y
+2024-10,2024,10,Snacks,in_store,3398.54,,Y
+2024-10,2024,10,Dairy,digital,5233.76,424330,Y
+2024-10,2024,10,Dairy,tv,2896.69,137810,Y
+2024-10,2024,10,Dairy,in_store,2758.39,,Y
+2024-10,2024,10,Personal Care,digital,16092.62,1917242,Y
+2024-10,2024,10,Personal Care,tv,8348.76,254004,Y
+2024-10,2024,10,Personal Care,in_store,8258.2,,Y
+2024-10,2024,10,Household,digital,8746.3,1289327,Y
+2024-10,2024,10,Household,tv,4710.07,151281,Y
+2024-10,2024,10,Household,in_store,4348.03,,Y
+2024-11,2024,11,Beverages,digital,7346.36,874981,Y
+2024-11,2024,11,Beverages,tv,3767.29,113768,Y
+2024-11,2024,11,Beverages,in_store,3560.82,,Y
+2024-11,2024,11,Snacks,digital,6126.28,600611,Y
+2024-11,2024,11,Snacks,tv,3150.31,137988,Y
+2024-11,2024,11,Snacks,in_store,3008.43,,Y
+2024-11,2024,11,Dairy,digital,4866.51,517775,Y
+2024-11,2024,11,Dairy,tv,2506.62,68426,Y
+2024-11,2024,11,Dairy,in_store,2428.84,,Y
+2024-11,2024,11,Personal Care,digital,14669.12,1873417,Y
+2024-11,2024,11,Personal Care,tv,7613.35,349153,Y
+2024-11,2024,11,Personal Care,in_store,7186.57,,Y
+2024-11,2024,11,Household,digital,7959.98,850023,Y
+2024-11,2024,11,Household,tv,4305.35,114571,Y
+2024-11,2024,11,Household,in_store,4196.8,,Y
+2024-12,2024,12,Beverages,digital,5201.21,544653,Y
+2024-12,2024,12,Beverages,tv,2632.93,108014,Y
+2024-12,2024,12,Beverages,in_store,2561.49,,Y
+2024-12,2024,12,Snacks,digital,4279.62,461878,Y
+2024-12,2024,12,Snacks,tv,2240.71,67803,Y
+2024-12,2024,12,Snacks,in_store,2198.24,,Y
+2024-12,2024,12,Dairy,digital,3385.64,345237,Y
+2024-12,2024,12,Dairy,tv,1699.83,63253,N
+2024-12,2024,12,Dairy,in_store,1693.57,,N
+2024-12,2024,12,Personal Care,digital,10453.96,1517056,Y
+2024-12,2024,12,Personal Care,tv,4943.35,208181,Y
+2024-12,2024,12,Personal Care,in_store,4966.15,,Y
+2024-12,2024,12,Household,digital,5679.79,559904,Y
+2024-12,2024,12,Household,tv,2836.15,127763,Y
+2024-12,2024,12,Household,in_store,3013.13,,Y

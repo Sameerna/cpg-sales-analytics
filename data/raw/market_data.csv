@@ -1,0 +1,241 @@
+period,year,quarter,category,region,total_market_revenue_usd,data_source
+2022-Q1,2022,1,Beverages,North,175223,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Beverages,South,140955,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Beverages,East,123144,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Beverages,West,88511,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Snacks,North,127080,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Snacks,South,108259,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Snacks,East,97508,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Snacks,West,77852,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Dairy,North,97097,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Dairy,South,91325,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Dairy,East,111048,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Dairy,West,85527,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Personal Care,North,76643,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Personal Care,South,80579,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Personal Care,East,84729,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Personal Care,West,70874,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Household,North,91082,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Household,South,83367,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Household,East,77735,NielsenIQ Syndicated Panel
+2022-Q1,2022,1,Household,West,69994,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Beverages,North,193475,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Beverages,South,147389,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Beverages,East,128277,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Beverages,West,93806,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Snacks,North,136375,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Snacks,South,112851,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Snacks,East,104333,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Snacks,West,84456,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Dairy,North,100372,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Dairy,South,93695,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Dairy,East,114110,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Dairy,West,89366,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Personal Care,North,77983,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Personal Care,South,84761,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Personal Care,East,89775,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Personal Care,West,71518,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Household,North,90739,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Household,South,86758,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Household,East,83320,NielsenIQ Syndicated Panel
+2022-Q2,2022,2,Household,West,73239,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Beverages,North,200769,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Beverages,South,150816,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Beverages,East,133267,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Beverages,West,97648,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Snacks,North,136458,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Snacks,South,117494,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Snacks,East,110075,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Snacks,West,84832,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Dairy,North,105572,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Dairy,South,95407,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Dairy,East,118294,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Dairy,West,87911,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Personal Care,North,78467,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Personal Care,South,87644,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Personal Care,East,90274,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Personal Care,West,73088,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Household,North,95823,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Household,South,92023,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Household,East,85264,NielsenIQ Syndicated Panel
+2022-Q3,2022,3,Household,West,73381,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Beverages,North,206834,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Beverages,South,162513,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Beverages,East,139418,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Beverages,West,101037,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Snacks,North,147503,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Snacks,South,123791,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Snacks,East,113043,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Snacks,West,91168,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Dairy,North,112368,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Dairy,South,99402,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Dairy,East,122790,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Dairy,West,93739,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Personal Care,North,85828,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Personal Care,South,87300,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Personal Care,East,99031,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Personal Care,West,77573,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Household,North,98593,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Household,South,95571,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Household,East,87944,NielsenIQ Syndicated Panel
+2022-Q4,2022,4,Household,West,75443,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Beverages,North,214776,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Beverages,South,169568,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Beverages,East,151225,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Beverages,West,109471,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Snacks,North,154963,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Snacks,South,126318,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Snacks,East,124844,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Snacks,West,93489,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Dairy,North,109536,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Dairy,South,99936,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Dairy,East,126054,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Dairy,West,96995,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Personal Care,North,84313,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Personal Care,South,95412,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Personal Care,East,100765,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Personal Care,West,79209,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Household,North,100987,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Household,South,100055,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Household,East,92869,NielsenIQ Syndicated Panel
+2023-Q1,2023,1,Household,West,80570,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Beverages,North,224618,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Beverages,South,175798,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Beverages,East,161274,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Beverages,West,112060,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Snacks,North,155246,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Snacks,South,134765,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Snacks,East,128255,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Snacks,West,97801,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Dairy,North,118805,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Dairy,South,107144,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Dairy,East,133062,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Dairy,West,95219,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Personal Care,North,89518,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Personal Care,South,96879,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Personal Care,East,106423,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Personal Care,West,81307,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Household,North,105953,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Household,South,102890,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Household,East,95806,NielsenIQ Syndicated Panel
+2023-Q2,2023,2,Household,West,81371,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Beverages,North,238914,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Beverages,South,192847,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Beverages,East,200088,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Beverages,West,115203,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Snacks,North,159899,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Snacks,South,143530,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Snacks,East,158499,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Snacks,West,99974,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Dairy,North,120425,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Dairy,South,110718,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Dairy,East,141567,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Dairy,West,97355,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Personal Care,North,91846,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Personal Care,South,98789,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Personal Care,East,113343,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Personal Care,West,86268,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Household,North,108069,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Household,South,103066,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Household,East,103918,NielsenIQ Syndicated Panel
+2023-Q3,2023,3,Household,West,81989,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Beverages,North,246873,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Beverages,South,203201,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Beverages,East,212213,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Beverages,West,124556,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Snacks,North,175044,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Snacks,South,144445,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Snacks,East,167421,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Snacks,West,100975,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Dairy,North,124710,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Dairy,South,109454,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Dairy,East,148849,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Dairy,West,103447,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Personal Care,North,94095,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Personal Care,South,104179,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Personal Care,East,117511,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Personal Care,West,86454,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Household,North,110677,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Household,South,108075,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Household,East,105553,NielsenIQ Syndicated Panel
+2023-Q4,2023,4,Household,West,88350,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Beverages,North,260251,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Beverages,South,209144,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Beverages,East,230605,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Beverages,West,126877,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Snacks,North,180437,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Snacks,South,153549,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Snacks,East,178641,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Snacks,West,106490,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Dairy,North,124064,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Dairy,South,119720,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Dairy,East,149927,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Dairy,West,102892,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Personal Care,North,99551,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Personal Care,South,108456,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Personal Care,East,118581,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Personal Care,West,92480,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Household,North,114714,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Household,South,112369,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Household,East,113926,NielsenIQ Syndicated Panel
+2024-Q1,2024,1,Household,West,90344,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Beverages,North,269684,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Beverages,South,225652,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Beverages,East,254398,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Beverages,West,131708,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Snacks,North,186098,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Snacks,South,160969,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Snacks,East,195777,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Snacks,West,110024,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Dairy,North,127092,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Dairy,South,123545,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Dairy,East,161087,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Dairy,West,106950,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Personal Care,North,102420,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Personal Care,South,111899,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Personal Care,East,126229,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Personal Care,West,92878,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Household,North,121289,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Household,South,114700,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Household,East,116176,NielsenIQ Syndicated Panel
+2024-Q2,2024,2,Household,West,90489,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Beverages,North,293903,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Beverages,South,232271,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Beverages,East,262177,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Beverages,West,142129,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Snacks,North,190654,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Snacks,South,165231,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Snacks,East,210927,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Snacks,West,115323,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Dairy,North,132239,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Dairy,South,127540,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Dairy,East,165368,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Dairy,West,110899,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Personal Care,North,106060,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Personal Care,South,116141,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Personal Care,East,136513,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Personal Care,West,95143,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Household,North,124229,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Household,South,117641,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Household,East,119558,NielsenIQ Syndicated Panel
+2024-Q3,2024,3,Household,West,94665,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Beverages,North,298924,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Beverages,South,236301,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Beverages,East,298629,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Beverages,West,151512,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Snacks,North,205522,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Snacks,South,173640,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Snacks,East,219251,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Snacks,West,116591,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Dairy,North,139166,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Dairy,South,130063,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Dairy,East,171849,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Dairy,West,116492,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Personal Care,North,112419,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Personal Care,South,118453,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Personal Care,East,142812,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Personal Care,West,98177,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Household,North,124997,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Household,South,124813,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Household,East,125947,NielsenIQ Syndicated Panel
+2024-Q4,2024,4,Household,West,95813,NielsenIQ Syndicated Panel
