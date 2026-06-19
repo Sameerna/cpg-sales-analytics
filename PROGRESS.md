@@ -9,9 +9,9 @@
 
 ## Next (in order)
 - [x] dbt_project/ — stg_* staging models + mart_* aggregation models (8 models, 35 tests — all pass)
-- [ ] ml/train.py + ml/predict.py — Ridge regression + MLflow
-- [ ] api/main.py + routes — FastAPI (predict, insights via Claude, metrics, summary)
-- [ ] dashboard/app.py — Streamlit UI
+- [x] ml/train.py + ml/predict.py — Ridge regression + MLflow (R²=0.785, MAE=$2,043)
+- [x] api/main.py + routes — FastAPI (predict, insights via Claude, metrics, summary)
+- [x] dashboard/app.py — Streamlit UI (4 tabs: KPIs, trends, forecast, AI insights)
 - [ ] tests/ — pytest
 - [ ] Dockerfile + docker-compose.yml + Makefile
 - [ ] .github/workflows/ci.yml

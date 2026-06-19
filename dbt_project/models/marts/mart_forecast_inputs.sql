@@ -44,10 +44,18 @@ LEFT JOIN {{ source('main', 'clean_weather_data') }} w
     ON  CAST(w.year AS TEXT)                       = ms.year
     AND PRINTF('%02d', CAST(w.month AS INTEGER))   = ms.month
     AND LOWER(w.region)                            = LOWER(ms.region)
-LEFT JOIN {{ source('main', 'clean_marketing_spend') }} mktg
-    ON  CAST(mktg.year AS TEXT)                    = ms.year
-    AND PRINTF('%02d', CAST(mktg.month AS INTEGER)) = ms.month
-    AND LOWER(mktg.category)                       = LOWER(ms.category)
+LEFT JOIN (
+    SELECT
+        CAST(year AS TEXT)                          AS year,
+        PRINTF('%02d', CAST(month AS INTEGER))      AS month,
+        LOWER(category)                             AS category,
+        ROUND(SUM(CAST(spend_usd AS REAL)), 2)      AS spend_usd
+    FROM {{ source('main', 'clean_marketing_spend') }}
+    GROUP BY CAST(year AS TEXT), PRINTF('%02d', CAST(month AS INTEGER)), LOWER(category)
+) mktg
+    ON  mktg.year     = ms.year
+    AND mktg.month    = ms.month
+    AND mktg.category = LOWER(ms.category)
 LEFT JOIN promo_agg pf
     ON  LOWER(pf.category) = LOWER(ms.category)
     AND pf.year            = ms.year
