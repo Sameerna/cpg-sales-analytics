@@ -11,7 +11,11 @@
 - [x] dbt_project/ — stg_* staging models + mart_* aggregation models (8 models, 35 tests — all pass)
 - [x] ml/train.py + ml/predict.py — Ridge regression + MLflow (R²=0.785, MAE=$2,043)
 - [x] api/main.py + routes — FastAPI (predict, insights via Claude, metrics, summary)
+- [x] api/llm.py — Claude Opus 4.8 with adaptive thinking + streaming; privacy-safe (only pre-aggregated metrics sent to API)
 - [x] dashboard/app.py — Streamlit UI (4 tabs: KPIs, trends, forecast, AI insights)
+- [x] Two-tab answer UX: ⚡ Executive Summary (fast, question-specific narrative) + ✦ Deep Think (Claude streaming)
+- [x] Executive Summary: elevated pitch paragraph + Supporting Evidence expander + Source Tables expander
+- [x] Loading spinner on question submit (no grey flash)
 - [ ] tests/ — pytest
 - [ ] Dockerfile + docker-compose.yml + Makefile
 - [ ] .github/workflows/ci.yml

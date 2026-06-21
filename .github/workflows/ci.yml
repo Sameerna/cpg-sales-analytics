@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Seed database
+        run: |
+          python3 ingestion/load_raw.py
+          python3 ingestion/validate.py
+
+      - name: Run dbt models
+        run: |
+          dbt run --project-dir dbt_project --profiles-dir dbt_project
+        env:
+          DBT_PROFILES_DIR: dbt_project
+
+      - name: Train ML model
+        run: python3 ml/train.py
+
+      - name: Run tests (ingestion + model)
+        run: pytest tests/test_ingestion.py tests/test_model.py -v
+
+      - name: Start API and run API tests
+        run: |
+          USE_LLM=false DB_PATH=./data/cpg.db API_KEY=dev-key \
+            uvicorn api.main:app --host 0.0.0.0 --port 8000 &
+          sleep 5
+          pytest tests/test_api.py -v
+        env:
+          USE_LLM: "false"
+          DB_PATH: ./data/cpg.db
+          API_KEY: dev-key
+          ANTHROPIC_API_KEY: "not-needed-llm-disabled"
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t cpg-analytics .
