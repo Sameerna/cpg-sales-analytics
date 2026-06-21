@@ -1,5 +1,7 @@
 # CPG Revenue Intelligence Platform
 
+**Live demo: [https://cpg-sales-analytics.streamlit.app/](https://cpg-sales-analytics.streamlit.app/)**
+
 A full-stack analytics platform for Consumer Packaged Goods sales data — combining a production-grade data pipeline, a machine learning forecast engine, and a Claude-powered AI layer that answers business questions in plain language.
 
 ![Python](https://img.shields.io/badge/Python-3.9-blue?style=flat-square&logo=python)
