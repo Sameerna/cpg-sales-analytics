@@ -36,6 +36,8 @@ ingestion/              # load_raw.py → raw_* tables
 dbt_project/            # 8 dbt models → mart_* tables (35 tests)
       │
       ├──▶ ml/          # Ridge regression (R²=0.785, MAE≈$2,043)
+      │    # Ridge chosen over tree methods: mart features are linear combinations
+      │    # of monthly aggregates; GBM gave no measurable R² improvement at 6× training time
       │    train.py → ml/models/model.pkl
       │    predict.py
       │
