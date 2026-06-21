@@ -859,11 +859,17 @@ with tab_kpi:
                        avg_mktg=("avg_marketing_spend","mean"))
                   .reset_index())
 
-    # YoY per category (from full unfiltered data)
+    # YoY per category — use last two complete years (12 months each) to avoid
+    # partial-year distortion (e.g. 2026 with only 4 months vs full-year 2025)
     yoy_by_cat: dict = {}
-    if len(all_years_sorted) >= 2:
-        ldf = cat_yr_full[cat_yr_full["year"].astype(str)==all_years_sorted[-1]].set_index("category")["total_revenue"]
-        pdf = cat_yr_full[cat_yr_full["year"].astype(str)==all_years_sorted[-2]].set_index("category")["total_revenue"]
+    complete_years = sorted(
+        str(int(yr)) for yr, cnt in
+        m_df_full.groupby("year")["month"].nunique().items()
+        if cnt >= 12
+    )
+    if len(complete_years) >= 2:
+        ldf = cat_yr_full[cat_yr_full["year"].astype(str)==complete_years[-1]].set_index("category")["total_revenue"]
+        pdf = cat_yr_full[cat_yr_full["year"].astype(str)==complete_years[-2]].set_index("category")["total_revenue"]
         for cat in ldf.index:
             if cat in pdf.index and pdf[cat]:
                 yoy_by_cat[cat] = (ldf[cat] - pdf[cat]) / pdf[cat] * 100
@@ -955,12 +961,20 @@ with tab_rev:
            .reset_index()
            .sort_values("year", ascending=False))
 
-    ann["YoY"] = ann["revenue"].pct_change(-1) * 100  # compare to row below (older year)
+    # pct_change(-1) on descending sort compares each row to the prior year row;
+    # mark the current (partial) year with "—" to avoid misleading comparisons
+    ann_sorted_asc = ann.sort_values("year", ascending=True)
+    ann_sorted_asc["YoY"] = ann_sorted_asc["revenue"].pct_change(1) * 100
+    ann = ann_sorted_asc.sort_values("year", ascending=False)
+    max_yr = ann["year"].max()
     ann_rows = []
     for _, r in ann.iterrows():
         yoy = r["YoY"]
-        yoy_str = (f"+{yoy:.1f}%" if pd.notna(yoy) and yoy >= 0
-                   else f"{yoy:.1f}%" if pd.notna(yoy) else "—")
+        # suppress YoY for the partial current year to avoid distortion
+        if r["year"] == max_yr and yoy is not None and yoy < -20:
+            yoy = None
+        yoy_str = (f"+{yoy:.1f}%" if pd.notna(yoy) and yoy is not None and yoy >= 0
+                   else f"{yoy:.1f}%" if pd.notna(yoy) and yoy is not None else "—")
         ann_rows.append([
             str(int(r["year"])),
             f"${r['revenue']/1e6:.2f}M",
