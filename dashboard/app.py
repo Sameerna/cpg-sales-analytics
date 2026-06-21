@@ -17,10 +17,13 @@ import requests
 import streamlit as st
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Config
+# Config — reads from env (local/Docker) or st.secrets (Streamlit Cloud)
 # ─────────────────────────────────────────────────────────────────────────────
-API_BASE = os.getenv("API_BASE", "http://localhost:8000")
-API_KEY  = os.getenv("API_KEY", "dev-key")
+def _cfg(key: str, default: str) -> str:
+    return os.getenv(key) or st.secrets.get(key, default)
+
+API_BASE = _cfg("API_BASE", "http://localhost:8000")
+API_KEY  = _cfg("API_KEY", "dev-key")
 HEADERS  = {"X-API-Key": API_KEY}
 
 REGION_MAP      = {"North": "NA", "South": "LATAM", "East": "APAC", "West": "EMEA"}

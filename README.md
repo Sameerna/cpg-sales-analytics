@@ -103,6 +103,51 @@ docker compose up -d
 
 ---
 
+## Live deployment (Render API + Streamlit Cloud)
+
+Deploy a permanent public URL in three steps — no server management, API key stays private.
+
+### Step 1 — Deploy the API to Render
+
+1. Go to [render.com](https://render.com) → **New** → **Web Service**
+2. Connect your GitHub repo (`cpg-sales-analytics`)
+3. Render detects `render.yaml` automatically — click **Apply**
+4. In the Render dashboard → **Environment** → add one secret variable:
+   ```
+   ANTHROPIC_API_KEY = sk-ant-...   ← your real key, never goes in code
+   ```
+5. Click **Deploy** — build takes ~3 minutes (installs deps, runs pipeline, trains model)
+6. Copy your service URL: `https://cpg-analytics-api.onrender.com`
+
+### Step 2 — Keep Render awake (free, 2-week guarantee)
+
+Render free tier sleeps after 15 min of inactivity. Fix with **UptimeRobot**:
+
+1. Go to [uptimerobot.com](https://uptimerobot.com) → **Add New Monitor**
+2. Type: **HTTP(s)**
+3. URL: `https://cpg-analytics-api.onrender.com/health`
+4. Interval: **5 minutes**
+5. Click **Create Monitor**
+
+That's it — UptimeRobot pings every 5 minutes, Render never sleeps.
+
+### Step 3 — Deploy the dashboard to Streamlit Community Cloud
+
+1. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**
+2. Connect your GitHub repo, set **Main file path**: `dashboard/app.py`
+3. Click **Advanced settings → Secrets** and paste:
+   ```toml
+   API_BASE = "https://cpg-analytics-api.onrender.com"
+   API_KEY  = "cpg-live-key"
+   ```
+   *(see `.streamlit/secrets.toml.example` for reference)*
+4. Click **Deploy** — done in ~60 seconds
+5. Share the URL: `https://your-app.streamlit.app`
+
+Visitors get the full dashboard. Your API key is stored in Render's vault — never visible to anyone accessing the URL.
+
+---
+
 ## Make targets
 
 | Command | What it does |

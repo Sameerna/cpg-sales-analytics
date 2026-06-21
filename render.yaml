@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: cpg-analytics-api
+    runtime: python
+    plan: free
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      python3 ingestion/load_raw.py &&
+      python3 ingestion/validate.py &&
+      dbt run --project-dir dbt_project --profiles-dir dbt_project &&
+      python3 ml/train.py
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DB_PATH
+        value: ./data/cpg.db
+      - key: MLFLOW_TRACKING_URI
+        value: ./mlruns
+      - key: USE_LLM
+        value: "true"
+      - key: API_KEY
+        value: "cpg-live-key"        # change this to any strong secret string
+      - key: ANTHROPIC_API_KEY
+        sync: false                   # set manually in Render dashboard → never in code
