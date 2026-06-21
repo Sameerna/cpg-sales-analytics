@@ -7,6 +7,7 @@ Run:
     streamlit run dashboard/app.py
 """
 import os
+import re
 from datetime import datetime
 from typing import Optional
 
@@ -514,10 +515,11 @@ def _render_exec_brief(question: str, brief: Optional[dict], ai_para: Optional[s
     )
     narrative = brief.get("narrative", "")
     if narrative:
+        narrative_html = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", narrative)
         st.markdown(
             f"<div style='background:#F0FDF4;border-radius:10px;padding:18px 22px;"
             f"border-left:4px solid #059669;margin-bottom:6px;"
-            f"font-size:.88rem;line-height:1.8;color:#0F172A;'>{narrative}</div>",
+            f"font-size:.88rem;line-height:1.8;color:#0F172A;'>{narrative_html}</div>",
             unsafe_allow_html=True,
         )
     st.markdown(
