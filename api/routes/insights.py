@@ -1002,6 +1002,30 @@ def stream_insights(body: InsightRequest) -> StreamingResponse:
     return StreamingResponse(event_generator(), media_type="text/plain")
 
 
+@router.post("/exec-ai")
+def exec_brief_ai(body: InsightRequest) -> StreamingResponse:
+    """Stream a focused 4-5 sentence AI paragraph for the executive summary tab."""
+    if not USE_LLM:
+        raise HTTPException(
+            status_code=503,
+            detail="LLM is disabled. Set USE_LLM=true in .env to enable AI synthesis.",
+        )
+    con = _conn()
+    try:
+        context = _build_sanitised_context(con)
+    finally:
+        con.close()
+
+    def event_generator():
+        try:
+            from api.llm import get_exec_brief_ai
+            yield from get_exec_brief_ai(question=body.question, sanitised_context=context)
+        except Exception as exc:
+            yield f"*Error ({type(exc).__name__}): {exc}*"
+
+    return StreamingResponse(event_generator(), media_type="text/plain")
+
+
 @router.post("/exec", response_model=ExecBriefResponse)
 def exec_brief(body: InsightRequest) -> ExecBriefResponse:
     """Structured executive brief: narrative bullets + evidence tables + source attribution."""

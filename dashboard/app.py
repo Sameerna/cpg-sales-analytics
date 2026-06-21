@@ -176,16 +176,49 @@ div[data-testid="stRadio"] [role="radiogroup"] input { display:none !important; 
     margin-bottom:9px; display:block;
 }
 
-/* AI chip buttons */
-div[data-testid="column"] .stButton > button[kind="secondary"] {
+/* ── All primary buttons → brand blue ── */
+[data-testid="baseButton-primary"],
+[data-testid="stBaseButton-primary"],
+.stButton > button[kind="primary"] {
+    background:#2563EB !important; border-color:#2563EB !important;
+    color:white !important; border-radius:8px !important;
+    font-weight:600 !important;
+}
+[data-testid="baseButton-primary"]:hover,
+[data-testid="stBaseButton-primary"]:hover,
+.stButton > button[kind="primary"]:hover {
+    background:#1D4ED8 !important; border-color:#1D4ED8 !important;
+}
+
+/* ── Chip / secondary buttons inside columns → light blue pill ── */
+div[data-testid="column"] [data-testid="baseButton-secondary"],
+div[data-testid="column"] [data-testid="stBaseButton-secondary"],
+div[data-testid="column"] .stButton > button[kind="secondary"],
+div[data-testid="column"] .stButton > button:not([kind="primary"]) {
     background:#EFF6FF !important; border:1px solid #BFDBFE !important;
     border-radius:20px !important; color:#1D4ED8 !important;
     font-size:.73rem !important; font-weight:500 !important;
     padding:4px 14px !important; white-space:normal !important;
     height:auto !important; line-height:1.4 !important; transition:all .15s !important;
 }
-div[data-testid="column"] .stButton > button[kind="secondary"]:hover {
+div[data-testid="column"] [data-testid="baseButton-secondary"]:hover,
+div[data-testid="column"] [data-testid="stBaseButton-secondary"]:hover,
+div[data-testid="column"] .stButton > button[kind="secondary"]:hover,
+div[data-testid="column"] .stButton > button:not([kind="primary"]):hover {
     background:#2563EB !important; color:white !important; border-color:#2563EB !important;
+}
+
+/* ── Text input → always white background ── */
+[data-testid="stTextInput"] input,
+[data-testid="stTextInput"] > div > div > input {
+    background:white !important; color:#0F172A !important;
+    border-color:#E2E8F0 !important; border-radius:8px !important;
+    font-size:.88rem !important;
+}
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextInput"] > div > div > input:focus {
+    border-color:#93C5FD !important;
+    box-shadow:0 0 0 3px rgba(37,99,235,.12) !important;
 }
 
 /* ── AI answer card ── */
@@ -226,9 +259,11 @@ div[data-testid="column"] .stButton > button[kind="secondary"]:hover {
 # Session state
 # ─────────────────────────────────────────────────────────────────────────────
 if "answers" not in st.session_state:
-    st.session_state.answers = []  # list of {q, summary, deep}
+    st.session_state.answers = []  # list of {q, exec_brief, ai_para, deep, is_custom_q}
 if "pending_q" not in st.session_state:
     st.session_state.pending_q = ""
+if "is_custom_q" not in st.session_state:
+    st.session_state.is_custom_q = False
 if "filter_year" not in st.session_state:
     st.session_state.filter_year = "All"
 if "filter_month" not in st.session_state:
@@ -363,6 +398,27 @@ def stream_insights_generator(question: str):
     except Exception as exc:
         yield f"\n\n*Connection error: {exc}*"
 
+
+def stream_exec_ai_generator(question: str):
+    """Yields text chunks from the short AI synthesis endpoint for the exec brief."""
+    try:
+        r = requests.post(
+            f"{API_BASE}/insights/exec-ai",
+            json={"question": question},
+            headers=HEADERS,
+            stream=True,
+            timeout=60,
+        )
+        if r.status_code == 503:
+            yield "*AI synthesis unavailable — set USE_LLM=true in .env to enable.*"
+            return
+        r.raise_for_status()
+        for chunk in r.iter_content(chunk_size=None, decode_unicode=True):
+            if chunk:
+                yield chunk
+    except Exception as exc:
+        yield f"*Connection error: {exc}*"
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Chart helper
 # ─────────────────────────────────────────────────────────────────────────────
@@ -433,24 +489,67 @@ def render_table(title: str, headers: list, rows: list) -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 # Executive brief renderer
 # ─────────────────────────────────────────────────────────────────────────────
-def _render_exec_brief(question: str, brief: Optional[dict]) -> None:
+def _render_exec_brief(question: str, brief: Optional[dict], ai_para: Optional[str] = None) -> str:
+    """
+    Renders two-part executive brief.
+    Returns the AI paragraph text (streamed live if ai_para is None, shown static otherwise).
+    """
     st.markdown(
         f"<div class='ai-answer-q' style='margin-bottom:14px;'>✦ {question}</div>",
         unsafe_allow_html=True,
     )
     if not brief:
         st.error("Could not load executive brief — is the API running?")
-        return
+        return ""
 
-    # ── Narrative paragraph ────────────────────────────────────────────────
+    # ── Part 1: Data Intelligence ──────────────────────────────────────────
+    st.markdown(
+        "<div style='font-size:.68rem;font-weight:700;color:#059669;"
+        "text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px 0;'>"
+        "📊 Data Intelligence</div>",
+        unsafe_allow_html=True,
+    )
     narrative = brief.get("narrative", "")
     if narrative:
         st.markdown(
-            f"<div style='background:#F8FAFF;border-radius:10px;padding:20px 24px;"
-            f"border-left:4px solid #2563EB;margin-bottom:18px;"
+            f"<div style='background:#F0FDF4;border-radius:10px;padding:18px 22px;"
+            f"border-left:4px solid #059669;margin-bottom:6px;"
             f"font-size:.88rem;line-height:1.8;color:#0F172A;'>{narrative}</div>",
             unsafe_allow_html=True,
         )
+    st.markdown(
+        "<div style='font-size:.67rem;color:#94A3B8;margin:0 0 22px 2px;'>"
+        "Computed from row-level transaction data using local ML models · No data sent externally"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+
+    # ── Part 2: AI Synthesis ───────────────────────────────────────────────
+    st.markdown(
+        "<div style='font-size:.68rem;font-weight:700;color:#2563EB;"
+        "text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px 0;'>"
+        "✦ AI Synthesis</div>",
+        unsafe_allow_html=True,
+    )
+    result_para = ""
+    if ai_para is not None:
+        st.markdown(ai_para)
+        result_para = ai_para
+    else:
+        _spin = st.empty()
+        _spin.markdown(
+            "<span style='color:#94A3B8;font-size:.82rem;'>✦ Claude is synthesising…</span>",
+            unsafe_allow_html=True,
+        )
+        result_para = st.write_stream(stream_exec_ai_generator(question))
+        _spin.empty()
+
+    st.markdown(
+        "<div style='font-size:.67rem;color:#94A3B8;margin:4px 0 22px 2px;'>"
+        "Row-level data is not provided to Claude · AI-generated text based on pre-aggregated statistics only"
+        "</div>",
+        unsafe_allow_html=True,
+    )
 
     # ── Supporting Evidence expander ──────────────────────────────────────
     evidence = brief.get("evidence", {})
@@ -494,6 +593,8 @@ def _render_exec_brief(question: str, brief: Optional[dict]) -> None:
                         f"{s['provides']}</div></div>",
                         unsafe_allow_html=True,
                     )
+
+    return str(result_para)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -618,11 +719,12 @@ chip_cols = st.columns(len(SUGGESTED_QUESTIONS))
 for i, (col, q) in enumerate(zip(chip_cols, SUGGESTED_QUESTIONS)):
     if col.button(q, key=f"chip_{i}", use_container_width=True):
         st.session_state.pending_q = q
+        st.session_state.is_custom_q = False  # suggested → Executive Summary first
 
 ai_inp_col, ai_btn_col, ai_clr_col = st.columns([8, 1, 1])
 ai_input = ai_inp_col.text_input(
     "ai_input", label_visibility="collapsed",
-    placeholder="Or type your own question…",
+    placeholder="Or type your own question — goes straight to Deep Think…",
     key="ai_text",
 )
 ask_btn   = ai_btn_col.button("Ask", type="primary", use_container_width=True)
@@ -635,9 +737,11 @@ if clear_btn:
 q_to_ask = ""
 if ask_btn and ai_input.strip():
     q_to_ask = ai_input.strip()
+    st.session_state.is_custom_q = True  # typed question → Deep Think first
 elif st.session_state.pending_q:
     q_to_ask = st.session_state.pending_q
     st.session_state.pending_q = ""
+    # is_custom_q already set when chip was clicked
 
 _SUMMARY_STYLE = (
     "font-family:'JetBrains Mono','Courier New',monospace;"
@@ -663,10 +767,18 @@ if q_to_ask:
     exec_brief = call_exec_brief(q_to_ask)
     _loading.empty()
 
-    # ── Two-tab answer ────────────────────────────────────────────────────
-    ans_tab_sum, ans_tab_deep = st.tabs(["⚡ Executive Summary", "✦ Deep Think"])
+    # ── Two-tab answer (order depends on question source) ────────────────
+    is_custom = st.session_state.is_custom_q
+    if is_custom:
+        # Custom typed question → Deep Think is the default (first) tab
+        ans_tab_deep, ans_tab_sum = st.tabs(["✦ Deep Think", "⚡ Executive Summary"])
+    else:
+        # Suggested chip → Executive Summary is the default (first) tab
+        ans_tab_sum, ans_tab_deep = st.tabs(["⚡ Executive Summary", "✦ Deep Think"])
+
     with ans_tab_sum:
-        _render_exec_brief(q_to_ask, exec_brief)
+        # streams AI Synthesis live and returns the text
+        ai_para = _render_exec_brief(q_to_ask, exec_brief)
     with ans_tab_deep:
         st.markdown(
             f"<div class='ai-answer-q' style='margin-bottom:10px;'>✦ {q_to_ask}</div>",
@@ -680,16 +792,22 @@ if q_to_ask:
         deep_text = st.write_stream(stream_insights_generator(q_to_ask))
         _thinking.empty()
 
-    st.session_state.answers.append(
-        {"q": q_to_ask, "exec_brief": exec_brief, "deep": str(deep_text)}
-    )
+    st.session_state.answers.append({
+        "q": q_to_ask, "exec_brief": exec_brief,
+        "ai_para": ai_para, "deep": str(deep_text),
+        "is_custom_q": is_custom,
+    })
 
 elif st.session_state.answers:
     # ── Show stored last answer ───────────────────────────────────────────
     last = st.session_state.answers[-1]
-    ans_tab_sum, ans_tab_deep = st.tabs(["⚡ Executive Summary", "✦ Deep Think"])
+    is_custom = last.get("is_custom_q", False)
+    if is_custom:
+        ans_tab_deep, ans_tab_sum = st.tabs(["✦ Deep Think", "⚡ Executive Summary"])
+    else:
+        ans_tab_sum, ans_tab_deep = st.tabs(["⚡ Executive Summary", "✦ Deep Think"])
     with ans_tab_sum:
-        _render_exec_brief(last["q"], last.get("exec_brief"))
+        _render_exec_brief(last["q"], last.get("exec_brief"), ai_para=last.get("ai_para", ""))
     with ans_tab_deep:
         st.markdown(
             f"<div class='ai-answer-q' style='margin-bottom:10px;'>✦ {last['q']}</div>",

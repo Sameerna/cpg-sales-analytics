@@ -12,6 +12,15 @@ import anthropic
 
 MODEL = os.getenv("LLM_MODEL", "claude-opus-4-8")
 
+_EXEC_AI_SYSTEM = (
+    "You are a senior CPG analyst presenting to C-suite executives. "
+    "Write exactly 4-5 sentences responding to the question. "
+    "Use the specific numbers from the provided trend data — quote growth rates, rankings, or "
+    "efficiency figures directly. Name what matters most, quantify it, and state the "
+    "commercial implication. Write as confident, decisive prose — no bullet points, "
+    "no headers, no markdown formatting."
+)
+
 _SYSTEM_PROMPT = (
     "You are a senior CPG (consumer packaged goods) sales analytics consultant. "
     "You receive pre-aggregated trend statistics — growth rates, market share indices, "
@@ -114,3 +123,39 @@ def get_insight_stream(
         elif "not found" in str(exc).lower() or "model" in str(exc).lower():
             hint = " — the model ID may be unavailable on your account tier."
         yield f"\n\n**API Error ({err_type}):** {exc}{hint}"
+
+
+def get_exec_brief_ai(
+    question: str,
+    sanitised_context: str,
+) -> Generator[str, None, None]:
+    """
+    Stream a focused 4-5 sentence executive paragraph for the summary tab.
+    Uses a tighter system prompt than get_insight_stream — prose only, no formatting.
+    """
+    try:
+        client = _get_client()
+        with client.messages.stream(
+            model=MODEL,
+            max_tokens=1024,
+            thinking={"type": "adaptive"},
+            system=_EXEC_AI_SYSTEM,
+            messages=[
+                {
+                    "role": "user",
+                    "content": (
+                        f"Trend data (aggregated, anonymised):\n"
+                        f"{sanitised_context}\n\n"
+                        f"Question: {question}"
+                    ),
+                }
+            ],
+        ) as stream:
+            for text in stream.text_stream:
+                yield text
+    except Exception as exc:
+        err_type = type(exc).__name__
+        hint = ""
+        if "auth" in err_type.lower() or "authentication" in str(exc).lower():
+            hint = " — check ANTHROPIC_API_KEY in .env."
+        yield f"*AI synthesis unavailable ({err_type}){hint}*"
