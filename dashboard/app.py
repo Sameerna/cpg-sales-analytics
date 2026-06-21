@@ -50,7 +50,7 @@ SUGGESTED_QUESTIONS = [
     "Which category has the strongest momentum?",
     "Which regions are underperforming?",
     "What does marketing efficiency tell us?",
-    "Where should we focus investment?",
+    "Which category should get next quarter's budget?",
     "Any revenue risk signals to act on?",
 ]
 
