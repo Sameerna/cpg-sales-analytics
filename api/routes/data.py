@@ -33,9 +33,17 @@ class CategorySummary(BaseModel):
     avg_discount_pct: float
 
 
+class MonthlyCategorySummary(BaseModel):
+    category: str
+    year: int
+    month: int
+    total_revenue: float
+
+
 class SummaryResponse(BaseModel):
     monthly: List[MonthlySummary]
     by_category: List[CategorySummary]
+    monthly_by_category: List[MonthlyCategorySummary]
 
 
 @router.get("/summary", response_model=SummaryResponse)
@@ -88,6 +96,28 @@ def data_summary() -> SummaryResponse:
             for r in cur.fetchall()
         ]
 
-        return SummaryResponse(monthly=monthly, by_category=by_category)
+        cur.execute(
+            """
+            SELECT category, year, month, SUM(monthly_revenue) AS rev
+            FROM mart_forecast_inputs
+            GROUP BY category, year, month
+            ORDER BY category, year, month
+            """
+        )
+        monthly_by_category = [
+            MonthlyCategorySummary(
+                category=r[0],
+                year=int(r[1]),
+                month=int(r[2]),
+                total_revenue=round(r[3], 2),
+            )
+            for r in cur.fetchall()
+        ]
+
+        return SummaryResponse(
+            monthly=monthly,
+            by_category=by_category,
+            monthly_by_category=monthly_by_category,
+        )
     finally:
         con.close()

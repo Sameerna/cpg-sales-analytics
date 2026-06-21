@@ -650,9 +650,28 @@ if not raw_metrics or not raw_summary:
 
 m_df_full   = pd.DataFrame(raw_summary["monthly"])
 cat_yr_full = pd.DataFrame(raw_summary["by_category"])
+cat_mo_full = pd.DataFrame(raw_summary.get("monthly_by_category", []))
 m_df_full["period"] = (m_df_full["year"].astype(str) + "-" +
                         m_df_full["month"].astype(str).str.zfill(2))
 m_df_full = m_df_full.sort_values("period")
+
+# Pre-compute YTD growth: current year vs same months in prior year
+_ytd_growth: dict = {}
+_ytd_label = "YoY Growth"
+if not cat_mo_full.empty:
+    _cur_yr  = int(cat_mo_full["year"].max())
+    _prev_yr = _cur_yr - 1
+    _cutoff  = int(cat_mo_full[cat_mo_full["year"] == _cur_yr]["month"].max())
+    _mo_name = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
+                7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+    _ytd_label = f"YTD Growth (Jan–{_mo_name[_cutoff]} {_cur_yr} vs {_prev_yr})"
+    _cur_ytd  = (cat_mo_full[(cat_mo_full["year"]==_cur_yr)  & (cat_mo_full["month"]<=_cutoff)]
+                 .groupby("category")["total_revenue"].sum())
+    _prev_ytd = (cat_mo_full[(cat_mo_full["year"]==_prev_yr) & (cat_mo_full["month"]<=_cutoff)]
+                 .groupby("category")["total_revenue"].sum())
+    for cat in _cur_ytd.index:
+        if cat in _prev_ytd.index and _prev_ytd[cat]:
+            _ytd_growth[cat] = (_cur_ytd[cat] - _prev_ytd[cat]) / _prev_ytd[cat] * 100
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Read active filters from session state (set via Filters drawer)
@@ -859,20 +878,7 @@ with tab_kpi:
                        avg_mktg=("avg_marketing_spend","mean"))
                   .reset_index())
 
-    # YoY per category — use last two complete years (12 months each) to avoid
-    # partial-year distortion (e.g. 2026 with only 4 months vs full-year 2025)
-    yoy_by_cat: dict = {}
-    complete_years = sorted(
-        str(int(yr)) for yr, cnt in
-        m_df_full.groupby("year")["month"].nunique().items()
-        if cnt >= 12
-    )
-    if len(complete_years) >= 2:
-        ldf = cat_yr_full[cat_yr_full["year"].astype(str)==complete_years[-1]].set_index("category")["total_revenue"]
-        pdf = cat_yr_full[cat_yr_full["year"].astype(str)==complete_years[-2]].set_index("category")["total_revenue"]
-        for cat in ldf.index:
-            if cat in pdf.index and pdf[cat]:
-                yoy_by_cat[cat] = (ldf[cat] - pdf[cat]) / pdf[cat] * 100
+    yoy_by_cat = _ytd_growth
 
     grand_total = cat_totals["total_revenue"].sum() or 1
 
@@ -894,7 +900,7 @@ with tab_kpi:
 
     render_table(
         "Category Performance",
-        ["Category", "Revenue", "Portfolio Share", "YoY Growth", "Avg Mktg Spend", "Avg Discount"],
+        ["Category", "Revenue", "Portfolio Share", _ytd_label, "Avg Mktg Spend", "Avg Discount"],
         rows,
     )
 
