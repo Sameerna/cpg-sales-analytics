@@ -202,7 +202,7 @@ def _build_sanitised_context(con: sqlite3.Connection) -> str:
     lines.append("\nRegional revenue share (% of total portfolio):")
     for row in reg_rows:
         region, share, rank = row
-        lines.append(f"  Rank {rank}: {region} — {share}% revenue share")
+        lines.append(f"  Rank {rank}: {_RMAP.get(region, region)} — {share}% revenue share")
 
     lines.append("\nRecent month-over-month growth:")
     for row in mom_rows:
