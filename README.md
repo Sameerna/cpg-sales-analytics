@@ -59,38 +59,47 @@ dbt_project/            # 8 dbt models → mart_* tables (35 tests)
 
 ### Local (recommended for development)
 
+**Requires Python 3.9 – 3.12.**
+
 ```bash
-# 1. Clone and install
+# 1. Clone and create a virtual environment
 git clone https://github.com/Sameerna/cpg-sales-analytics.git
 cd cpg-sales-analytics
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 2. Configure environment
+# 3. Configure environment
 cp .env.example .env
-# Edit .env — add your ANTHROPIC_API_KEY
+# Open .env — the defaults work out of the box (USE_LLM=false)
+# To enable AI features, set USE_LLM=true and add your ANTHROPIC_API_KEY
 
-# 3. Build the database and ML model
+# 4. Build the database and ML model  (~30 seconds)
 make setup          # ingest → dbt → train
 
-# 4. Start the API (Terminal 1)
+# 5. Start the API (Terminal 1 — keep venv active)
 make api
 
-# 5. Start the dashboard (Terminal 2)
+# 6. Start the dashboard (Terminal 2 — keep venv active)
 make dashboard
 # Open http://localhost:8501
 ```
 
+> **No API key needed to get started.** The default `USE_LLM=false` runs
+> entirely offline — all KPI charts, revenue tables, ML forecasts, and the
+> Data Intelligence answers work without Claude. Set `USE_LLM=true` in `.env`
+> and add an `ANTHROPIC_API_KEY` to unlock the AI Synthesis and Deep Think tabs.
+
 ### Docker
 
 ```bash
-cp .env.example .env   # add your ANTHROPIC_API_KEY
+cp .env.example .env   # defaults work; add API key to enable AI features
 docker compose up -d
 # API:       http://localhost:8000
 # Dashboard: http://localhost:8501
 ```
-
-> Set `USE_LLM=false` in `.env` to run entirely offline — the Data Intelligence
-> tab and all charts work without an API key.
 
 ---
 

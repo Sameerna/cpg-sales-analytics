@@ -1,4 +1,8 @@
-.PHONY: install ingest dbt train api dashboard test lint docker-build docker-up docker-down
+.PHONY: venv install ingest dbt train api dashboard test test-api test-all lint docker-build docker-up docker-down
+
+venv:
+	python3 -m venv .venv
+	@echo "Run: source .venv/bin/activate"
 
 install:
 	pip install -r requirements.txt
