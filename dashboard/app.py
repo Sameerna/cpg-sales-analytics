@@ -664,7 +664,7 @@ if not cat_mo_full.empty:
     _cutoff  = int(cat_mo_full[cat_mo_full["year"] == _cur_yr]["month"].max())
     _mo_name = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
                 7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
-    _ytd_label = f"YTD Growth (Jan–{_mo_name[_cutoff]} {_cur_yr} vs {_prev_yr})"
+    _ytd_label = "YTD Growth"
     _cur_ytd  = (cat_mo_full[(cat_mo_full["year"]==_cur_yr)  & (cat_mo_full["month"]<=_cutoff)]
                  .groupby("category")["total_revenue"].sum())
     _prev_ytd = (cat_mo_full[(cat_mo_full["year"]==_prev_yr) & (cat_mo_full["month"]<=_cutoff)]
