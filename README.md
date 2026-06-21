@@ -1,0 +1,202 @@
+# CPG Revenue Intelligence Platform
+
+A full-stack analytics platform for Consumer Packaged Goods sales data — combining a production-grade data pipeline, a machine learning forecast engine, and a Claude-powered AI layer that answers business questions in plain language.
+
+![Python](https://img.shields.io/badge/Python-3.9-blue?style=flat-square&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat-square&logo=fastapi)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=flat-square&logo=streamlit)
+![dbt](https://img.shields.io/badge/dbt-1.8-orange?style=flat-square&logo=dbt)
+![Claude](https://img.shields.io/badge/Claude-Opus_4.8-8A2BE2?style=flat-square)
+![CI](https://img.shields.io/github/actions/workflow/status/Sameerna/cpg-sales-analytics/ci.yml?style=flat-square&label=CI)
+
+---
+
+## What it does
+
+Ask a natural language question about the portfolio — *"Which regions are underperforming?"* or *"What does marketing efficiency tell us?"* — and the platform responds with two answers simultaneously:
+
+- **Data Intelligence** — computed directly from row-level transaction data using SQL and ML, with no data leaving your environment
+- **AI Synthesis** — a 4–5 sentence executive narrative written by Claude, grounded in pre-aggregated statistics only (raw records are never forwarded)
+
+The dashboard also provides KPI cards, revenue trends, promotion analysis, and a Ridge regression model that forecasts next-period revenue by category and region.
+
+---
+
+## Architecture
+
+```
+data/raw/*.csv
+      │
+      ▼
+ingestion/              # load_raw.py → raw_* tables
+      │                 # validate.py → clean_* tables + rejected_records
+      ▼
+dbt_project/            # 8 dbt models → mart_* tables (35 tests)
+      │
+      ├──▶ ml/          # Ridge regression (R²=0.785, MAE≈$2,043)
+      │    train.py → ml/models/model.pkl
+      │    predict.py
+      │
+      └──▶ api/          # FastAPI
+               │
+               ├── /metrics          GET  portfolio KPIs
+               ├── /data/summary     GET  monthly & category summaries
+               ├── /predict          POST ML revenue forecast
+               ├── /insights         POST local SQL analytics engine
+               ├── /insights/exec    POST structured executive brief
+               ├── /insights/exec-ai POST Claude short paragraph (streaming)
+               └── /insights/stream  POST Claude deep analysis (streaming)
+                        │
+                        ▼
+               dashboard/app.py      # Streamlit — 3 analytics tabs + Ask the Data
+```
+
+**Privacy guarantee:** `_build_sanitised_context()` strips all absolute revenue figures before any data reaches Claude. Only growth rates, rankings, and indexed values are forwarded.
+
+---
+
+## Quick start
+
+### Local (recommended for development)
+
+```bash
+# 1. Clone and install
+git clone https://github.com/Sameerna/cpg-sales-analytics.git
+cd cpg-sales-analytics
+pip install -r requirements.txt
+
+# 2. Configure environment
+cp .env.example .env
+# Edit .env — add your ANTHROPIC_API_KEY
+
+# 3. Build the database and ML model
+make setup          # ingest → dbt → train
+
+# 4. Start the API (Terminal 1)
+make api
+
+# 5. Start the dashboard (Terminal 2)
+make dashboard
+# Open http://localhost:8501
+```
+
+### Docker
+
+```bash
+cp .env.example .env   # add your ANTHROPIC_API_KEY
+docker compose up -d
+# API:       http://localhost:8000
+# Dashboard: http://localhost:8501
+```
+
+> Set `USE_LLM=false` in `.env` to run entirely offline — the Data Intelligence
+> tab and all charts work without an API key.
+
+---
+
+## Make targets
+
+| Command | What it does |
+|---|---|
+| `make setup` | Full pipeline: install → ingest → dbt → train |
+| `make api` | Start FastAPI with hot-reload |
+| `make dashboard` | Start Streamlit dashboard |
+| `make test` | Run ingestion + model tests (17 tests) |
+| `make test-all` | Run all tests including API tests |
+| `make lint` | Run ruff linter |
+| `make docker-build` | Build Docker image |
+| `make docker-up` | Start both services via docker-compose |
+| `make docker-down` | Stop services |
+
+---
+
+## Project structure
+
+```
+├── ingestion/
+│   ├── load_raw.py          # CSV → raw_* SQLite tables
+│   └── validate.py          # clean_* tables + quarantine
+├── dbt_project/
+│   └── models/
+│       ├── staging/         # stg_* light transforms
+│       └── marts/           # mart_forecast_inputs, mart_revenue_*
+├── ml/
+│   ├── train.py             # Ridge regression + MLflow logging
+│   ├── predict.py           # Inference wrapper
+│   └── models/model.pkl     # Trained artefact
+├── api/
+│   ├── main.py              # FastAPI app + auth middleware
+│   ├── llm.py               # Claude API wrapper (streaming)
+│   └── routes/
+│       ├── metrics.py       # KPI aggregations
+│       ├── data.py          # Monthly/category summaries
+│       ├── predict.py       # ML forecast endpoint
+│       └── insights.py      # AI insights (local + Claude)
+├── dashboard/
+│   └── app.py               # Streamlit UI
+├── tests/
+│   ├── test_ingestion.py    # 12 pipeline quality tests
+│   ├── test_model.py        # 5 ML model tests
+│   └── test_api.py          # 12 API integration tests
+├── docs/
+│   ├── ai-collaboration.md  # How this platform was built, request by request
+│   ├── test-results.md      # Test run results and issue log
+│   └── adr/
+│       ├── ADR-001-sqlite-vs-warehouse.md
+│       └── ADR-002-dbt-over-raw-sql.md
+├── .streamlit/config.toml   # Forces light theme
+├── .github/workflows/ci.yml # CI: test → docker build
+├── Dockerfile
+├── docker-compose.yml
+└── Makefile
+```
+
+---
+
+## API reference
+
+All endpoints require the header `X-API-Key: <your-key>` (set `API_KEY` in `.env`).
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/health` | Health check |
+| GET | `/metrics` | KPI summary — revenue, regions, categories |
+| GET | `/data/summary` | Monthly and category breakdowns |
+| POST | `/predict` | ML revenue forecast for a category/region/month |
+| POST | `/insights` | Local SQL analytics (always available, `force_local` flag) |
+| POST | `/insights/exec` | Structured executive brief — narrative + evidence + sources |
+| POST | `/insights/exec-ai` | Streaming 4–5 sentence Claude paragraph |
+| POST | `/insights/stream` | Streaming full Claude deep analysis |
+
+Interactive docs: `http://localhost:8000/docs`
+
+---
+
+## Data
+
+Nine CSV sources covering 3 years (2022–2024) across 5 product categories
+and 4 regions:
+
+| Source | Records | Description |
+|---|---|---|
+| `transactions` | 64,838 raw / 60,646 clean | SKU-level sales with channel, price, quantity |
+| `marketing_spend` | 780 | Monthly spend by channel with impressions |
+| `stockout_events` | 54 | Supply disruptions with duration and estimated lost revenue |
+| `competitor_activity` | 17 | Competitor pricing moves, market entries, promotions |
+| `market_data` | 340 | Total addressable market by category for share calculations |
+| `products` / `stores` / `promotions` / `weather_data` | — | Enrichment tables |
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Storage | SQLite (single file, zero config) |
+| Transformation | dbt-core 1.8 + dbt-sqlite |
+| ML | scikit-learn Ridge regression, MLflow tracking |
+| API | FastAPI, Pydantic, Uvicorn |
+| LLM | Anthropic Claude Opus 4.8, adaptive thinking, streaming |
+| Dashboard | Streamlit, Plotly |
+| CI | GitHub Actions |
+| Containerisation | Docker, docker-compose |
