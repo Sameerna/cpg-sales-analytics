@@ -1,7 +1,7 @@
 # Build Progress
 
 ## Done
-- [x] Repo: `git init` + GitHub remote at https://github.com/Sameerna/cpg-sales-analytics
+- [x] Repo: `git init` + GitHub remote
 - [x] 9 raw CSVs in `data/raw/` — 42k transactions, 3 yrs (2022-2024), rich business patterns
 - [x] `ingestion/load_raw.py` — loads all CSVs into SQLite raw_* tables
 - [x] `ingestion/validate.py` — cleans to clean_* tables, 4,271 rows quarantined in rejected_records

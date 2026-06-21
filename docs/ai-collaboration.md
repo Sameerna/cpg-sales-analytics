@@ -157,5 +157,4 @@ The git history is intentionally kept clean and descriptive so the
 
 ---
 
-*Built during a 2-week AI Acceleration Engineer evaluation at Sigmoid.*
 *AI tooling: Claude Code (Anthropic) throughout.*
