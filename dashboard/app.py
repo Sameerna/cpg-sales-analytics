@@ -442,17 +442,13 @@ def _render_exec_brief(question: str, brief: Optional[dict]) -> None:
         st.error("Could not load executive brief — is the API running?")
         return
 
-    # ── Narrative ─────────────────────────────────────────────────────────
-    narrative = brief.get("narrative", [])
+    # ── Narrative paragraph ────────────────────────────────────────────────
+    narrative = brief.get("narrative", "")
     if narrative:
-        bullets = "".join(
-            f"<li style='margin-bottom:11px;'>{n}</li>" for n in narrative
-        )
         st.markdown(
             f"<div style='background:#F8FAFF;border-radius:10px;padding:20px 24px;"
-            f"border-left:4px solid #2563EB;margin-bottom:18px;'>"
-            f"<ul style='margin:0;padding-left:20px;font-size:.88rem;line-height:1.75;"
-            f"color:#0F172A;'>{bullets}</ul></div>",
+            f"border-left:4px solid #2563EB;margin-bottom:18px;"
+            f"font-size:.88rem;line-height:1.8;color:#0F172A;'>{narrative}</div>",
             unsafe_allow_html=True,
         )
 

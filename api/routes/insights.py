@@ -484,6 +484,198 @@ def _compute_data_insight(con: sqlite3.Connection) -> str:
     return body + "\n\n— Computed from internal data pipeline. No external AI used."
 
 
+def _synthesise_paragraph(
+    question: str,
+    cat_rows: list, reg_rows: list, share_rows: list,
+    comp_rows: list, stock_rows: list, stock_meta: Optional[tuple],
+    chan_rows: list, forecast_rows: list,
+) -> str:
+    """
+    Generate a 3-4 sentence paragraph that directly answers the question
+    using the most relevant slice of the data. Each question gets a
+    different answer — no generic portfolio dump.
+    """
+    q = question.lower()
+    R = _REGION_DISPLAY
+
+    is_regional   = any(w in q for w in ["region", "geography", "latam", "apac", "emea", " na", "north", "south", "east", "west", "underperform", "perform"])
+    is_momentum   = any(w in q for w in ["momentum", "strongest", "fastest", "leading", "top category", "best categ"])
+    is_category   = any(w in q for w in ["category", "beverages", "snacks", "dairy", "household", "personal care"]) or is_momentum
+    is_marketing  = any(w in q for w in ["marketing", "efficiency", "spend", "channel", "discount", "roi", "budget", "promo"])
+    is_risk       = any(w in q for w in ["risk", "stockout", "supply", "disruption", "lost", "loss", "revenue risk"])
+    is_invest     = any(w in q for w in ["invest", "focus", "priorit", "opportunit", "where should", "allocat", "bet"])
+    is_competitor = any(w in q for w in ["compet", "rivalco", "valuebrand", "healthfirst", "threat", "market entry"])
+
+    parts: List[str] = []
+
+    # ── Regional underperformance ─────────────────────────────────────────
+    if is_regional and reg_rows:
+        sorted_asc = sorted(reg_rows, key=lambda r: r[2])
+        bottom2 = sorted_asc[:2]
+        top = sorted_asc[-1]
+        avg_reg = round(sum(r[2] for r in reg_rows) / len(reg_rows), 1)
+        bot_txt = " and ".join(
+            f"**{R.get(r[0], r[0])}** ({r[2]:+.1f}%)" for r in bottom2
+        )
+        parts.append(
+            f"{bot_txt} are the underperforming regions, "
+            f"trailing the portfolio average of {avg_reg:+.1f}% by "
+            f"{avg_reg - bottom2[0][2]:.1f}pp and {avg_reg - bottom2[1][2]:.1f}pp respectively. "
+            f"**{R.get(top[0], top[0])}** leads at {top[2]:+.1f}% — "
+            f"a {top[2] - bottom2[0][2]:.1f}pp spread that points to structural, not seasonal, divergence."
+        )
+        lag_db = {r[0] for r in bottom2}
+        recent_pressure = [
+            r for r in comp_rows
+            if r[3] in lag_db and r[4] >= "2025-01-01"
+        ][:2]
+        if recent_pressure:
+            comp_txt = "; ".join(
+                f"{r[0]} – {r[1].replace('_', ' ')} ({R.get(r[3], r[3])}, {r[4][:7]})"
+                for r in recent_pressure
+            )
+            parts.append(
+                f"Competitive moves are amplifying the pressure: {comp_txt}. "
+                "A targeted response — localised pricing or promotional investment — is warranted before further share erosion."
+            )
+
+    # ── Category momentum ─────────────────────────────────────────────────
+    elif is_category and cat_rows:
+        avg = round(sum(r[2] for r in cat_rows) / len(cat_rows), 1)
+        top = cat_rows[0]   # sorted desc by yoy
+        second = cat_rows[1] if len(cat_rows) > 1 else None
+        bot = cat_rows[-1]
+        yr = top[1]
+        parts.append(
+            f"**{top[0]}** has the strongest momentum in {yr} at {top[2]:+.1f}% YoY — "
+            f"{top[2] - avg:.1f}pp above the portfolio average of {avg:+.1f}% — "
+            f"and its {top[3]:.1f}× marketing ROI confirms the growth is efficiently earned, not discount-driven."
+        )
+        if second:
+            parts.append(
+                f"**{second[0]}** ({second[2]:+.1f}%, {second[3]:.1f}× ROI) is the second-strongest; "
+                f"at revenue rank #{second[5]}/{second[6]} it has headroom to grow with incremental investment."
+            )
+        parts.append(
+            f"**{bot[0]}** ({bot[2]:+.1f}%) lags the field with a {bot[3]:.1f}× ROI — "
+            "the discount depth of {:.1f}% is not converting to durable volume and should be reviewed.".format(bot[4])
+        )
+
+    # ── Marketing efficiency ──────────────────────────────────────────────
+    elif is_marketing and chan_rows:
+        top_ch = chan_rows[0]
+        in_store = next((c for c in chan_rows if "store" in c[0].lower()), None)
+        best_cat = max(cat_rows, key=lambda r: r[3]) if cat_rows else None
+        worst_cat = min(cat_rows, key=lambda r: r[3]) if cat_rows else None
+        parts.append(
+            f"**{top_ch[1]}% of marketing budget flows through {top_ch[0]}** "
+            f"(CPM ${top_ch[2]:.2f}) — dominant channel allocation, but high concentration "
+            "may signal underinvestment in conversion-stage touchpoints."
+        )
+        if in_store:
+            parts.append(
+                f"**In-store receives just {in_store[1]}% of spend** despite being the primary "
+                "decision point for most CPG purchases; closing this gap could directly lift "
+                "shelf offtake independent of awareness-building channels."
+            )
+        if best_cat and worst_cat and best_cat[0] != worst_cat[0]:
+            parts.append(
+                f"By marketing ROI, **{best_cat[0]}** returns {best_cat[3]:.1f}× versus "
+                f"**{worst_cat[0]}** at {worst_cat[3]:.1f}× — a {best_cat[3] - worst_cat[3]:.1f}× gap that "
+                "makes a strong case for rebalancing budget toward higher-return categories."
+            )
+
+    # ── Revenue risk / supply chain ───────────────────────────────────────
+    elif is_risk and stock_meta and stock_meta[0]:
+        total_ev, min_yr, max_yr, q4_cluster, total_loss = stock_meta
+        parts.append(
+            f"The clearest revenue risk is supply chain: **{total_ev} stockout events** across "
+            f"{min_yr}–{max_yr}, with **{q4_cluster} occurring in Q4 2025 alone** — "
+            f"the largest single-quarter cluster recorded, carrying est. **${total_loss:,.0f} cumulative lost revenue**."
+        )
+        if stock_rows:
+            top_s = stock_rows[0]
+            parts.append(
+                f"**{R.get(top_s[0], top_s[0])}** is the highest-impact region: {top_s[2]} events, "
+                f"{top_s[3]} cumulative days, est. ${top_s[4]:,.0f} lost — "
+                f"root cause: {top_s[1].replace('_', ' ')}, which requires structural remediation, not reactive replenishment."
+            )
+        parts.append(
+            "Dual-sourcing high-velocity SKUs and building safety stock buffers ahead of the next "
+            "peak season would materially reduce this exposure."
+        )
+
+    # ── Investment focus ──────────────────────────────────────────────────
+    elif is_invest and (forecast_rows or share_rows or cat_rows):
+        if forecast_rows:
+            top_f = forecast_rows[0]
+            parts.append(
+                f"The ML model (Ridge, R²=0.785) identifies **{top_f[0]}/{top_f[1]}** as the "
+                f"highest near-term revenue opportunity — forecast at **${top_f[2]:,.0f}** "
+                f"in {top_f[3]} {top_f[4]}."
+            )
+        if share_rows:
+            gainers = [(c, d) for c, y, s, d in share_rows if d and d > 0]
+            if gainers:
+                top_g = max(gainers, key=lambda x: x[1])
+                parts.append(
+                    f"Market share data reinforces **{top_g[0]}**: gaining {top_g[1]:+.1f}pp YoY — "
+                    "momentum is compounding and incremental investment now is likely to deliver outsized returns."
+                )
+        if cat_rows:
+            best_roi = max(cat_rows, key=lambda r: r[3])
+            parts.append(
+                f"On marketing efficiency, **{best_roi[0]}** delivers the best ROI at {best_roi[3]:.1f}× — "
+                "reweighting spend toward this category maximises return on invested capital."
+            )
+
+    # ── Competitor focus ──────────────────────────────────────────────────
+    elif is_competitor and comp_rows:
+        competitors = sorted(set(r[0] for r in comp_rows))
+        recent = comp_rows[:4]
+        parts.append(
+            f"**{len(comp_rows)} competitor events** are on record from {', '.join(competitors)}, "
+            f"with activity accelerating into 2025–2026 across pricing, market entry, and promotions."
+        )
+        for r in recent[:2]:
+            parts.append(
+                f"**{r[0]}** – {r[1].replace('_', ' ')} in {r[2]}/{R.get(r[3], r[3] or '—')} "
+                f"({r[4][:7]}): {r[5]}"
+            )
+        parts.append(
+            "Pricing responses in affected categories and regions should be modelled before the next "
+            "planning cycle to avoid reactive discounting."
+        )
+
+    # ── Default: balanced snapshot ────────────────────────────────────────
+    else:
+        if cat_rows:
+            yr = cat_rows[0][1]
+            avg = round(sum(r[2] for r in cat_rows) / len(cat_rows), 1)
+            top = cat_rows[0]
+            bot = cat_rows[-1]
+            parts.append(
+                f"Portfolio averaged **{avg:+.1f}% YoY** in {yr}. "
+                f"**{top[0]}** leads at {top[2]:+.1f}% ({top[3]:.1f}× marketing ROI); "
+                f"**{bot[0]}** lags at {bot[2]:+.1f}% ({bot[3]:.1f}× ROI)."
+            )
+        if reg_rows:
+            top_r = max(reg_rows, key=lambda r: r[2])
+            bot_r = min(reg_rows, key=lambda r: r[2])
+            parts.append(
+                f"**{R.get(top_r[0], top_r[0])}** leads regionally at {top_r[2]:+.1f}% while "
+                f"**{R.get(bot_r[0], bot_r[0])}** trails at {bot_r[2]:+.1f}%."
+            )
+        if comp_rows:
+            parts.append(
+                f"{len(comp_rows)} competitor events logged — most recent: "
+                f"**{comp_rows[0][0]}** {comp_rows[0][1].replace('_', ' ')} in "
+                f"{comp_rows[0][2]}/{R.get(comp_rows[0][3], comp_rows[0][3] or '—')} ({comp_rows[0][4][:7]})."
+            )
+
+    return " ".join(parts) or "Insufficient data to answer this question directly."
+
+
 _EXEC_SOURCES = [
     {"table": "mart_forecast_inputs",      "layer": "Mart",  "provides": "Category YoY growth, marketing ROI, ML feature inputs"},
     {"table": "mart_revenue_by_region",    "layer": "Mart",  "provides": "Regional revenue breakdowns & YoY performance"},
@@ -495,7 +687,7 @@ _EXEC_SOURCES = [
 ]
 
 
-def _compute_exec_brief(con: sqlite3.Connection) -> dict:
+def _compute_exec_brief(con: sqlite3.Connection, question: str = "") -> dict:
     """
     Returns structured executive brief: synthesised narrative bullets,
     supporting evidence tables, and source-table attribution.
@@ -657,91 +849,11 @@ def _compute_exec_brief(con: sqlite3.Connection) -> dict:
         except Exception:
             pass
 
-    # ── Synthesise Narrative ─────────────────────────────────────────────
-    narrative: List[str] = []
-
-    if cat_rows:
-        yr_label = cat_rows[0][1]
-        avg_yoy = round(sum(r[2] for r in cat_rows) / len(cat_rows), 1)
-        top = cat_rows[0]
-        bot = cat_rows[-1]
-        n_positive = sum(1 for r in cat_rows if r[2] > 0)
-        narrative.append(
-            f"**Portfolio grew {avg_yoy:+.1f}% YoY in {yr_label}** across all {top[6]} categories. "
-            f"**{top[0]}** leads momentum at {top[2]:+.1f}% — the highest growth rate by category. "
-            f"**{bot[0]}** ({bot[2]:+.1f}%) is the performance gap to close."
-        )
-
-    if len(reg_rows) >= 2:
-        top_r = reg_rows[0]
-        bot_r = reg_rows[-1]
-        top_disp = _REGION_DISPLAY.get(top_r[0], top_r[0])
-        bot_disp = _REGION_DISPLAY.get(bot_r[0], bot_r[0])
-        gap = round(top_r[2] - bot_r[2], 1)
-        narrative.append(
-            f"**Regional performance is bifurcated**: {top_disp} outpaces at {top_r[2]:+.1f}% YoY "
-            f"while {bot_disp} trails at {bot_r[2]:+.1f}% — a {gap:.1f}pp gap that warrants "
-            "a geo-specific investment thesis."
-        )
-
-    if share_rows:
-        gaining = [(cat, chg) for cat, yr, share, chg in share_rows if chg and chg > 0]
-        losing  = [(cat, chg) for cat, yr, share, chg in share_rows if chg and chg < 0]
-        parts: List[str] = []
-        if gaining:
-            g_txt = ", ".join(f"{c} ({d:+.1f}pp)" for c, d in sorted(gaining, key=lambda x: -x[1])[:2])
-            parts.append(f"gaining in {g_txt}")
-        if losing:
-            l_txt = ", ".join(f"{c} ({d:+.1f}pp)" for c, d in sorted(losing, key=lambda x: x[1])[:2])
-            parts.append(f"ceding ground in {l_txt}")
-        if parts:
-            narrative.append(
-                f"**Market share trajectory**: company is {' and '.join(parts)}. "
-                "Share defence or capture strategy needed depending on category priority."
-            )
-
-    if comp_rows:
-        comp_names = sorted(set(r[0] for r in comp_rows))
-        recent_3 = comp_rows[:3]
-        recent_txt = "; ".join(
-            f"{r[0]} – {r[1].replace('_', ' ')} "
-            f"({r[2]}/{_REGION_DISPLAY.get(r[3], r[3] or '—')})"
-            for r in recent_3
-        )
-        narrative.append(
-            f"**Competitive intensity is rising** across {len(comp_rows)} logged events "
-            f"from {', '.join(comp_names)}. "
-            f"Most recent: {recent_txt}."
-        )
-
-    if stock_meta and stock_meta[0]:
-        total_ev, min_yr, max_yr, q4_cluster, total_loss = stock_meta
-        narrative.append(
-            f"**Supply chain absorbed {total_ev} stockout events ({min_yr}–{max_yr})**, "
-            f"including a {q4_cluster}-event cluster in Q4 2025 "
-            f"(est. ${total_loss:,.0f} cumulative lost revenue). "
-            "Logistics and supplier-delay root causes dominate — structural mitigation required pre-peak."
-        )
-
-    if chan_rows:
-        top_ch = chan_rows[0]
-        in_store = next((c for c in chan_rows if "store" in c[0].lower()), None)
-        in_store_note = (
-            f" In-store at {in_store[1]}% of budget may be underweighting shelf conversion."
-            if in_store else ""
-        )
-        narrative.append(
-            f"**{top_ch[1]}% of marketing budget is allocated to {top_ch[0]}** "
-            f"(CPM ${top_ch[2]:.2f}).{in_store_note} "
-            "Channel rebalancing could unlock additional ROI."
-        )
-
-    if forecast_rows:
-        top_f = forecast_rows[0]
-        narrative.append(
-            f"**ML model identifies {top_f[0]}/{top_f[1]}** as the highest near-term opportunity "
-            f"(forecast: ${top_f[2]:,.0f} in {top_f[3]} {top_f[4]}, Ridge R²=0.785)."
-        )
+    # ── Synthesise question-specific narrative paragraph ─────────────────
+    narrative: str = _synthesise_paragraph(
+        question, cat_rows, reg_rows, share_rows,
+        comp_rows, stock_rows, stock_meta, chan_rows, forecast_rows,
+    )
 
     # ── Evidence tables ────────────────────────────────────────────────────
     evidence = {}
@@ -825,7 +937,7 @@ class InsightResponse(BaseModel):
 
 
 class ExecBriefResponse(BaseModel):
-    narrative: List[str]
+    narrative: str
     evidence: dict
     sources: List[dict]
 
@@ -895,7 +1007,7 @@ def exec_brief(body: InsightRequest) -> ExecBriefResponse:
     """Structured executive brief: narrative bullets + evidence tables + source attribution."""
     con = _conn()
     try:
-        data = _compute_exec_brief(con)
+        data = _compute_exec_brief(con, body.question)
     finally:
         con.close()
     return ExecBriefResponse(
