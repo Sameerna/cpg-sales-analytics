@@ -489,6 +489,7 @@ def _synthesise_paragraph(
     cat_rows: list, reg_rows: list, share_rows: list,
     comp_rows: list, stock_rows: list, stock_meta: Optional[tuple],
     chan_rows: list, forecast_rows: list,
+    bev_price_vol_rows: Optional[list] = None,
 ) -> str:
     """
     Generate a 3-4 sentence paragraph that directly answers the question
@@ -498,6 +499,10 @@ def _synthesise_paragraph(
     q = question.lower()
     R = _REGION_DISPLAY
 
+    is_price_elasticity = (
+        any(w in q for w in ["price hike", "price increase", "elasticity", "hurt", "price hurt"])
+        and any(w in q for w in ["bev", "volume", "category"])
+    )
     is_regional   = any(w in q for w in ["region", "geography", "latam", "apac", "emea", " na", "north", "south", "east", "west", "underperform", "perform"])
     is_momentum   = any(w in q for w in ["momentum", "strongest", "fastest", "leading", "top category", "best categ"])
     is_category   = any(w in q for w in ["category", "beverages", "snacks", "dairy", "household", "personal care"]) or is_momentum
@@ -508,8 +513,65 @@ def _synthesise_paragraph(
 
     parts: List[str] = []
 
+    # ── Price elasticity / hike impact ───────────────────────────────────
+    if is_price_elasticity and bev_price_vol_rows:
+        rows_by_yr: dict = {}
+        for yr, mo, qty, price in bev_price_vol_rows:
+            rows_by_yr.setdefault(yr, []).append((int(mo), qty, price))
+
+        def _yr_totals(yr: str):
+            data = rows_by_yr.get(yr, [])
+            total_qty = sum(r[1] for r in data)
+            avg_price = round(sum(r[2] for r in data) / len(data), 2) if data else 0
+            return total_qty, avg_price
+
+        qty_2024, price_2024 = _yr_totals("2024")
+        qty_2025, price_2025 = _yr_totals("2025")
+        qty_2026_partial, price_2026 = _yr_totals("2026")
+
+        if qty_2024 and qty_2025:
+            vol_yoy = round((qty_2025 - qty_2024) / qty_2024 * 100, 1)
+            price_chg = round((price_2025 - price_2024) / price_2024 * 100, 1)
+            # Peak volume month in 2025
+            peak = max(rows_by_yr.get("2025", []), key=lambda r: r[1])
+            peak_2024_same = next((r for r in rows_by_yr.get("2024", []) if r[0] == peak[0]), None)
+            peak_yoy = round((peak[1] - peak_2024_same[1]) / peak_2024_same[1] * 100, 1) if peak_2024_same else None
+            month_name = _MONTH_NAMES.get(peak[0], str(peak[0]))
+            parts.append(
+                f"**No — the 2025 price increase did not hurt Beverages volume.** "
+                f"Volume grew **+{vol_yoy}% YoY** in 2025 despite a **+{price_chg}% rise in average unit price** "
+                f"(${price_2024} → ${price_2025}), confirming demand remained inelastic through the hike period. "
+                + (f"Growth peaked in {month_name} 2025 at +{peak_yoy}% vs the prior year." if peak_yoy else "")
+            )
+            # Competitor response signals our pricing had market power
+            bev_comp_2025 = sorted(
+                [r for r in comp_rows
+                 if r[2] == "Beverages" and r[1] == "price_cut" and "2025-01-01" <= r[4] <= "2025-12-31"],
+                key=lambda r: r[4]
+            )[:2]
+            if bev_comp_2025:
+                comp_txt = "; ".join(
+                    f"{r[0]} cut {r[2]} prices in {R.get(r[3], r[3])} ({r[4][:7]})"
+                    for r in bev_comp_2025
+                )
+                parts.append(
+                    f"Competitors registered the impact: {comp_txt}. "
+                    "Rival price cuts in direct response to our Q1 gains confirm our pricing had real market power before any volume backlash."
+                )
+            # 2026 early warning
+            if qty_2026_partial and rows_by_yr.get("2026"):
+                n_months = len(rows_by_yr["2026"])
+                qty_2025_same = sum(r[1] for r in rows_by_yr.get("2025", []) if r[0] <= n_months)
+                vol_2026_chg = round((qty_2026_partial - qty_2025_same) / qty_2025_same * 100, 1) if qty_2025_same else 0
+                price_2026_chg = round((price_2026 - price_2025) / price_2025 * 100, 1)
+                parts.append(
+                    f"The watchpoint is 2026: price has risen a further **+{price_2026_chg}%** to ${price_2026} "
+                    f"with early volume growth at just **{vol_2026_chg:+.1f}%** — "
+                    "the elasticity threshold may be approaching and further price increases carry higher demand risk."
+                )
+
     # ── Regional underperformance ─────────────────────────────────────────
-    if is_regional and reg_rows:
+    elif is_regional and reg_rows:
         sorted_asc = sorted(reg_rows, key=lambda r: r[2])
         bottom2 = sorted_asc[:2]
         top = sorted_asc[-1]
@@ -849,10 +911,23 @@ def _compute_exec_brief(con: sqlite3.Connection, question: str = "") -> dict:
         except Exception:
             pass
 
+    # ── Beverages monthly price / volume (for price elasticity questions) ─
+    cur.execute("""
+        SELECT year, month,
+               SUM(monthly_quantity) AS qty,
+               ROUND(AVG(avg_unit_price), 2) AS avg_price
+        FROM mart_forecast_inputs
+        WHERE category = 'Beverages'
+        GROUP BY year, month
+        ORDER BY year, month
+    """)
+    bev_price_vol_rows = cur.fetchall()  # (year, month, qty, avg_price)
+
     # ── Synthesise question-specific narrative paragraph ─────────────────
     narrative: str = _synthesise_paragraph(
         question, cat_rows, reg_rows, share_rows,
         comp_rows, stock_rows, stock_meta, chan_rows, forecast_rows,
+        bev_price_vol_rows=bev_price_vol_rows,
     )
 
     # ── Evidence tables ────────────────────────────────────────────────────

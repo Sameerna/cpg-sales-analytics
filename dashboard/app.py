@@ -51,7 +51,7 @@ SUGGESTED_QUESTIONS = [
     "Which regions are underperforming?",
     "What does marketing efficiency tell us?",
     "Which category should get next quarter's budget?",
-    "Did the Jan 2023 price hike hurt Beverages volume?",
+    "Did the 2025 price hike hurt Beverages volume?",
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
