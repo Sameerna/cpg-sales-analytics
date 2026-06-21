@@ -724,7 +724,7 @@ for i, (col, q) in enumerate(zip(chip_cols, SUGGESTED_QUESTIONS)):
 ai_inp_col, ai_btn_col, ai_clr_col = st.columns([8, 1, 1])
 ai_input = ai_inp_col.text_input(
     "ai_input", label_visibility="collapsed",
-    placeholder="Or type your own question — goes straight to Deep Think…",
+    placeholder="Ask anything — grounded in real portfolio data, written by Claude",
     key="ai_text",
 )
 ask_btn   = ai_btn_col.button("Ask", type="primary", use_container_width=True)
