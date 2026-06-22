@@ -258,3 +258,5 @@ and 4 regions:
 | Dashboard | Streamlit, Plotly |
 | CI | GitHub Actions |
 | Containerisation | Docker, docker-compose |
+
+**Incremental ingestion:** monthly transaction drops are handled automatically — place a new `transactions_YYYY_MM.csv` in `data/incoming/` and run `python ingestion/ingest_monthly.py`. The pipeline skips already-processed files (idempotent watermark log), validates and quarantines bad rows, appends clean data, and triggers a `dbt run` to refresh all marts.
