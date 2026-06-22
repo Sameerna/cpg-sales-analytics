@@ -33,7 +33,7 @@ data/raw/*.csv
 ingestion/              # load_raw.py → raw_* tables
       │                 # validate.py → clean_* tables + rejected_records
       ▼
-dbt_project/            # 8 dbt models → mart_* tables (35 tests)
+dbt_project/            # 8 dbt models → mart_* tables (27 schema tests)
       │
       ├──▶ ml/          # Ridge regression (R²=0.785, MAE≈$2,043)
       │    # Ridge chosen over tree methods: mart features are linear combinations
