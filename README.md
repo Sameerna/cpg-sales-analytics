@@ -7,10 +7,10 @@ If you see an error like "uvicorn api.main:app --reload", please reach out to sa
 
 A full-stack analytics platform for Consumer Packaged Goods sales data — combining a production-grade data pipeline, a machine learning forecast engine, and a Claude-powered AI layer that answers business questions in plain language.
 
-![Python](https://img.shields.io/badge/Python-3.9-blue?style=flat-square&logo=python)
+![Python](https://img.shields.io/badge/Python-3.9–3.13-blue?style=flat-square&logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat-square&logo=fastapi)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=flat-square&logo=streamlit)
-![dbt](https://img.shields.io/badge/dbt-1.8-orange?style=flat-square&logo=dbt)
+![dbt](https://img.shields.io/badge/dbt-1.8+-orange?style=flat-square&logo=dbt)
 ![Claude](https://img.shields.io/badge/Claude-Opus_4.8-8A2BE2?style=flat-square)
 ![CI](https://img.shields.io/github/actions/workflow/status/Sameerna/cpg-sales-analytics/ci.yml?style=flat-square&label=CI)
 
@@ -38,7 +38,7 @@ ingestion/              # load_raw.py → raw_* tables
       ▼
 dbt_project/            # 8 dbt models → mart_* tables (27 schema tests)
       │
-      ├──▶ ml/          # Ridge regression (R²=0.785, MAE≈$2,043)
+      ├──▶ ml/          # Ridge regression (R²≈0.8, MAE≈$2,000; exact value varies by scikit-learn version)
       │    # Ridge chosen over tree methods: mart features are linear combinations
       │    # of monthly aggregates; GBM gave no measurable R² improvement at 6× training time
       │    train.py → ml/models/model.pkl
@@ -66,7 +66,7 @@ dbt_project/            # 8 dbt models → mart_* tables (27 schema tests)
 
 ### Local (recommended for development)
 
-**Requires Python 3.9 – 3.12.**
+**Requires Python 3.9 – 3.13.**
 
 ```bash
 # 1. Clone and create a virtual environment
