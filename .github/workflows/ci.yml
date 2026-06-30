@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Lint (ruff)
+        run: ruff check .
+
       - name: Seed database
         run: |
           python3 ingestion/load_raw.py
@@ -31,11 +34,17 @@ jobs:
         env:
           DBT_PROFILES_DIR: dbt_project
 
+      - name: Run dbt tests (schema + singular data-quality assertions)
+        run: |
+          dbt test --project-dir dbt_project --profiles-dir dbt_project
+        env:
+          DBT_PROFILES_DIR: dbt_project
+
       - name: Train ML model
         run: python3 ml/train.py
 
-      - name: Run tests (ingestion + model)
-        run: pytest tests/test_ingestion.py tests/test_model.py -v
+      - name: Run tests (ingestion + model + privacy)
+        run: pytest tests/test_ingestion.py tests/test_model.py tests/test_privacy.py -v
 
       - name: Start API and run API tests
         run: |

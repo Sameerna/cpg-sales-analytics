@@ -1,4 +1,4 @@
-.PHONY: venv install ingest dbt train api dashboard test test-api test-all lint docker-build docker-up docker-down
+.PHONY: venv install ingest dbt dbt-test train api dashboard test test-api test-all lint docker-build docker-up docker-down
 
 venv:
 	python3 -m venv .venv
@@ -25,8 +25,11 @@ api:
 dashboard:
 	streamlit run dashboard/app.py
 
+dbt-test:
+	dbt test --project-dir dbt_project --profiles-dir dbt_project
+
 test:
-	pytest tests/test_ingestion.py tests/test_model.py -v
+	pytest tests/test_ingestion.py tests/test_model.py tests/test_privacy.py -v
 
 test-api:
 	pytest tests/test_api.py -v

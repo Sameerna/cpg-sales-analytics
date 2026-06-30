@@ -1,11 +1,11 @@
 # CPG Revenue Intelligence Platform
 
-**Live demo: [https://cpg-sales-analytics.streamlit.app/](https://cpg-sales-analytics.streamlit.app/)**
-
-
-If you see an error like "uvicorn api.main:app --reload", please reach out to sameernajoshi@gmail.com, since this is a free version the systems can be down due to inactivity, I will need to spin it back up. 
-
 A full-stack analytics platform for Consumer Packaged Goods sales data — combining a production-grade data pipeline, a machine learning forecast engine, and a Claude-powered AI layer that answers business questions in plain language.
+
+The fastest way to see it working is the [Quick start](#quick-start) below — a clean clone runs end-to-end locally with no API key required.
+
+> **Live demo:** [https://cpg-sales-analytics.streamlit.app/](https://cpg-sales-analytics.streamlit.app/)
+> *(hosted on free tiers — if it shows an inactivity error, the local quick-start is the reliable path, or email sameernajoshi@gmail.com to wake the hosted service.)*
 
 ![Python](https://img.shields.io/badge/Python-3.9–3.13-blue?style=flat-square&logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat-square&logo=fastapi)
@@ -200,6 +200,7 @@ Visitors get the full dashboard. Your API key is stored in Render's vault — ne
 │   ├── test_model.py        # 5 ML model tests
 │   └── test_api.py          # 12 API integration tests
 ├── docs/
+│   ├── extending.md         # Extension points for the inheriting project team
 │   ├── ai-collaboration.md  # How this platform was built, request by request
 │   ├── test-results.md      # Test run results and issue log
 │   └── adr/

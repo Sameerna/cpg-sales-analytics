@@ -475,7 +475,7 @@ def _compute_data_insight(con: sqlite3.Connection) -> str:
             pass
     if forecast_lines:
         sections.append(
-            f"ML Revenue Forecast — top 5 category-region pairs\n"
+            "ML Revenue Forecast — top 5 category-region pairs\n"
             + "\n".join(forecast_lines)
             + "\n  Model accuracy: R²=0.785 | MAE ≈ $2,043 (Ridge regression)"
         )
@@ -934,7 +934,6 @@ def _compute_exec_brief(con: sqlite3.Connection, question: str = "") -> dict:
     evidence = {}
 
     if cat_rows:
-        yr_label = cat_rows[0][1]
         evidence["Category Performance"] = {
             "headers": ["Category", "YoY Growth", "Rev Rank", "Mktg ROI", "Avg Discount"],
             "rows": [

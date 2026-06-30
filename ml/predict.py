@@ -5,7 +5,6 @@ Loads the saved Ridge pipeline and returns a revenue prediction.
 import os
 import pickle
 from pathlib import Path
-from typing import Optional
 
 import pandas as pd
 

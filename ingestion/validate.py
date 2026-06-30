@@ -5,7 +5,6 @@ Every bad row is quarantined with a reason_code — never silently dropped.
 Run: python ingestion/validate.py
 """
 import os
-import re
 import sqlite3
 from datetime import datetime
 from typing import Optional

@@ -1,0 +1,14 @@
+# Lint policy for CI. Keeps ruff's sensible defaults (pyflakes F-codes catch real
+# dead code and bugs) but ignores the compact one-line if/semicolon style the
+# dashboard uses intentionally.
+line-length = 120
+
+[lint]
+ignore = [
+    "E701",  # multiple statements on one line (colon) — intentional compact style
+    "E702",  # multiple statements on one line (semicolon) — intentional compact style
+]
+
+[lint.per-file-ignores]
+# One-off synthetic-data generator, not part of the runtime/serving path.
+"data/generate_extension.py" = ["F401", "F841"]
