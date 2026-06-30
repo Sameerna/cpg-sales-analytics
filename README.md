@@ -3,7 +3,7 @@
 **Live demo: [https://cpg-sales-analytics.streamlit.app/](https://cpg-sales-analytics.streamlit.app/)**
 
 
-If you see an like "uvicorn api.main:app --reload", please reach out to sameernajoshi@gmail.com. Since this is a free version I will need to spin up the systems if they are down due to inactivity. 
+If you see an error like "uvicorn api.main:app --reload", please reach out to sameernajoshi@gmail.com, since this is a free version the systems can be down due to inactivity, I will need to spin it back up. 
 
 A full-stack analytics platform for Consumer Packaged Goods sales data — combining a production-grade data pipeline, a machine learning forecast engine, and a Claude-powered AI layer that answers business questions in plain language.
 
