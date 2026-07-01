@@ -712,11 +712,20 @@ if len(m_df) >= 2:
     if r2: mom_pct = round((r1 - r2) / r2 * 100, 1)
 
 yoy_delta: Optional[float] = None
-yr_t = (cat_yr_full[cat_yr_full["category"].isin(cat_filter)]
-        .groupby("year")["total_revenue"].sum().sort_index())
-if len(yr_t) >= 2:
-    ly, py = yr_t.iloc[-1], yr_t.iloc[-2]
-    if py: yoy_delta = round((ly - py) / py * 100, 1)
+yoy_kpi_label = "Full-Year YoY"
+# Like-for-like: compare current year vs prior year over the SAME months only.
+# Comparing a partial current year against a full prior year would show a huge
+# false drop (e.g. -65% when only a few months of the latest year exist).
+if not cat_mo_full.empty:
+    _cyr = int(cat_mo_full["year"].max())
+    _pyr = _cyr - 1
+    _cut = int(cat_mo_full[cat_mo_full["year"] == _cyr]["month"].max())
+    _sel = cat_mo_full[cat_mo_full["category"].isin(cat_filter)]
+    _cur = _sel[(_sel["year"] == _cyr) & (_sel["month"] <= _cut)]["total_revenue"].sum()
+    _prev = _sel[(_sel["year"] == _pyr) & (_sel["month"] <= _cut)]["total_revenue"].sum()
+    if _prev:
+        yoy_delta = round((_cur - _prev) / _prev * 100, 1)
+        yoy_kpi_label = "Full-Year YoY" if _cut >= 12 else "YTD YoY"
 
 all_years_sorted = sorted(cat_yr_full["year"].astype(str).unique())
 
@@ -863,7 +872,7 @@ with tab_kpi:
         delta_color="normal",
     )
     k4.metric(
-        "Full-Year YoY",
+        yoy_kpi_label,
         f"{yoy_delta:+.1f}%" if yoy_delta is not None else "—",
         delta=f"{yoy_delta:.1f}%" if yoy_delta is not None else None,
         delta_color="normal",
